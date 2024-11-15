@@ -1,5 +1,0 @@
-# Permitir que los archivos CSS y JS sean accesibles
-<FilesMatch "\.(css|js|jpg|jpeg|png|gif|ico)$">
-  SetHandler None
-</FilesMatch>
-
