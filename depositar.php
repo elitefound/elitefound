@@ -100,9 +100,9 @@
             <div class="col text-center">
                 <h4>¡DESCUBRE TU CAMINO HACIA EL ÉXITO FINANCIERO CON NOSOTROS!</h4>
                 <br>
-                <p>En ELITE FOUND, te ofrecemos planes de inversión que se adaptan a tus necesidades.<br>¡Descubre el plan que mejor se adapte a ti y comienza tu viaje hacia el crecimiento económico hoy mismo</p>
+                <h6>En ELITE FOUND, te ofrecemos planes de inversión que se adaptan a tus necesidades.<br>¡Descubre el plan que mejor se adapte a ti y comienza tu viaje hacia el crecimiento económico hoy mismo</h6>
                 <br><br>
-                <p>Tu oportunidad está a solo un clic de distancia.</p>
+                <h6>Tu oportunidad está a solo un clic de distancia.</h6>
             </div>
         </div>
         <div class="articulos">

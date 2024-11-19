@@ -81,7 +81,7 @@ function enviaCodigo($codigo, $Email_user, $emailUser, $emailPass) {
             $mail->SMTPDebug = 0;
             $mail->isSMTP();
             $mail->CharSet = 'UTF-8';
-            $mail->Host = 'smtp.gmail.com';
+            $mail->Host = 'smtp.zoho.com';
             $mail->SMTPAuth = true;
             $mail->Username = $emailUser;
             $mail->Password = $emailPass;
@@ -155,7 +155,7 @@ function emailconfirmado($Email, $emailUser, $emailPass){
         $mail->SMTPDebug = 0;
         $mail->isSMTP();
         $mail->CharSet = 'UTF-8';
-        $mail->Host = 'smtp.gmail.com';
+        $mail->Host = 'smtp.zoho.com';
         $mail->SMTPAuth = true;
         $mail->Username = $emailUser;
         $mail->Password = $emailPass;
@@ -217,7 +217,7 @@ function accesoCuenta($fechaHoraActual,$direccionIP,$dispositivo,$userName,$emai
         $mail->SMTPDebug = 0;
         $mail->isSMTP();
         $mail->CharSet = 'UTF-8';
-        $mail->Host = 'smtp.gmail.com';
+        $mail->Host = 'smtp.zoho.com';
         $mail->SMTPAuth = true;
         $mail->Username = $emailUser;
         $mail->Password = $emailPass;
@@ -298,7 +298,7 @@ function enviaContraseña($codigo, $Email_user, $emailUser, $emailPass) {
             $mail->SMTPDebug = 0;
             $mail->isSMTP();
             $mail->CharSet = 'UTF-8';
-            $mail->Host = 'smtp.gmail.com';
+            $mail->Host = 'smtp.zoho.com';
             $mail->SMTPAuth = true;
             $mail->Username = $emailUser;
             $mail->Password = $emailPass;

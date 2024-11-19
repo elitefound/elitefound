@@ -95,7 +95,7 @@
             <div class="col text-center">
                 <h4>¡ESTE ES EL CORAZÓN DE SU INGRESO RESIDUAL DE POR VIDA!</h4>
                 <br>
-                <p>Genere comisiones residuales día a día de las compras de licencias generadas en su<br>organización, hasta <strong>ocho niveles</strong> de  profundidad.</p>
+                <h6>Genere comisiones residuales día a día de las compras de licencias generadas en su<br>organización, hasta <strong>ocho niveles</strong> de  profundidad.</h6>
             </div>
         </div>
     </div>

@@ -10,8 +10,14 @@ $(document).ready(function() {
         LetrasEspacio(nombreInput, 50, 3, 1, err_form_1);
     });
 
+    $("#floatingInputCedula").keyup(function() {
+        var err_form_1 = /[^a-zA-ZáéíóúÁÉÍÓÚñÑ0-9]/g;
+        var nombreInput = "#floatingInputCedula";
+        LetrasEspacio(nombreInput, 50, 3, 0, err_form_1);
+    });
+
     $("#floatingInputuserName").keyup(function() {
-        var err_form_1 = /[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g;
+        var err_form_1 = /[^a-zA-ZáéíóúÁÉÍÓÚñÑ0-9]/g;
         var nombreInput = "#floatingInputuserName";
         LetrasEspacio(nombreInput, 50, 3, 0, err_form_1);
     });
@@ -33,7 +39,7 @@ $(document).ready(function() {
 
         var nombreInput = "#floatingInputpassword";
         var valorInput = $(nombreInput).val().trim();
-        var err_form4 = /[\-_*./()&$!#%+=]/g;
+        var err_form4 = /[\-_*./()@&$!#%+=]/g;
         var err_form3 = /[\d]/g;
         var err_form2 = /[A-Z]/g;
         var err_form1 = /[a-z]/g;

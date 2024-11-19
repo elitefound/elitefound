@@ -76,7 +76,7 @@ include(dirname(__FILE__).'/controller/planesController.php');
         <div class="modal-content">
             <form action="subscribe.php" id="subscribe" method="post">
                 <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>                   
                 </div>
                 <div class="modal-body">
                     <div class="container">
@@ -91,8 +91,8 @@ include(dirname(__FILE__).'/controller/planesController.php');
                                     </svg>
                                 </span>
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" name="EmailUser" id="floatingInputGroup1" placeholder="Email ID">
-                                    <label for="floatingInputGroup1">Correo electrónico</label>
+                                    <input type="email" class="form-control" name="EmailUser" id="EmailUser" placeholder="Email ID">
+                                    <label for="EmailUser">Correo electrónico</label>
                                 </div>
                             </div>
                             <div class="input-group mb-3">
@@ -102,32 +102,55 @@ include(dirname(__FILE__).'/controller/planesController.php');
                                             <path id="Trazado_9" data-name="Trazado 9" d="M741.427,580.808h-2.033V578.27a8.488,8.488,0,0,0-16.977,0v2.538H720.38a2.9,2.9,0,0,0-2.89,2.889V600.22a2.909,2.909,0,0,0,2.89,2.916h21.047a2.916,2.916,0,0,0,2.917-2.916V583.7A2.909,2.909,0,0,0,741.427,580.808Zm-15.173-2.538a4.652,4.652,0,1,1,9.3,0v2.538h-9.3Zm6.222,17.218v4.221a.317.317,0,0,1-.333.306h-2.02a.312.312,0,0,1-.308-.306v-4.221a3.708,3.708,0,1,1,2.661,0Z" fill="#e3e3e3"/>
                                         </g>
                                     </svg>
-                                </span>
+                                 </span>
                                 <div class="form-floating">
-                                    <input type="password" class="form-control" id="floatingInputGroup2" name="passUser" placeholder="Password">
-                                    <label for="floatingInputGroup2">Contraseña</label>
+                                    <input type="password" class="form-control" name="passUser" id="passUser" placeholder="Password">
+                                    <label for="passUser">Contraseña</label>
                                 </div>
                             </div>
                         </div>
+                        <div id="respuesta" style="color: red"></div>
                         <div class="row modalFoo">
                             <div class="col">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                                    <label class="form-check-label" for="gridCheck">
-                                        Recuérdame
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <p style="text-align: right;"><a href=""><i>¿Has olvidado tu contraseña?</i></a></p>
+                                <p style="text-align: right;"><button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#olvidoPass"><i>¿Has olvidado tu contraseña?</i></button></p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <div id="btnLogin">
-                        <button type="submit" class="btn">ACCESO</button>
+                        <button id="btnAcceso" type="button" class="btn">ACCESO</button>
                     </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="olvidoPass" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="olvidoPassLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header" style="border: none;">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="controller/changepassword.php" method="post">
+                <div class="modal-body formDepositar_1">
+                    <div class="row">
+                        <div class="col">
+                            <h1 class="modal-title">¿Has olvidado tu contraseña?</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-floating">
+                                <input type="email" class="form-control inputRegistro" name="EmailUser" id="EmailUser" placeholder="Email ID" required>
+                                <label for="EmailUser">Correo electrónico</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="border: none";>
+                    <button type="submit" class="btn  botonRegistro">Enviar correo</button>
                 </div>
             </form>
         </div>
@@ -151,14 +174,19 @@ include(dirname(__FILE__).'/controller/planesController.php');
                     <br>
                     <div class="row">
                         <div class="col">
+                            <?php echo $referido; ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control inputRegistro" name="Nombre" id="floatingInputNombre" placeholder="Nombre">
+                                <input type="text" class="form-control inputRegistro" name="Nombre" id="floatingInputNombre" placeholder="Nombre" required>
                                 <label for="floatingInputNombre">Nombre</label>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control inputRegistro" name="Apellido" id="floatingInputApellido" placeholder="Apellido">
+                                <input type="text" class="form-control inputRegistro" name="Apellido" id="floatingInputApellido" placeholder="Apellido" required>
                                 <label for="floatingInputApellido">Apellido</label>
                             </div>
                         </div>
@@ -166,7 +194,7 @@ include(dirname(__FILE__).'/controller/planesController.php');
                     <div class="row">
                         <div class="col">
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control inputRegistro" name="Email" id="floatingInputemail" placeholder="Correo electrónico">
+                                <input type="email" class="form-control inputRegistro" name="Email" id="floatingInputemail" placeholder="Correo electrónico" required>
                                 <label for="floatingInputemail">Correo electrónico</label>
                             </div>
                         </div>
@@ -174,16 +202,50 @@ include(dirname(__FILE__).'/controller/planesController.php');
                     <div class="row">
                         <div class="col">
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control inputRegistro" name="Password_1" id="floatingInputpassword" placeholder="Contraseña">
-                                <label for="floatingInputpassword">Contraseña</label>
+                                <input type="text" class="form-control inputRegistro" name="userName" id="floatingInputuserName" placeholder="Nombre de usuario" required>
+                                <label for="floatingInputuserName">Nombre de usuario</label>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control inputRegistro" name="Password_2" id="floatingInputpasswordConf" placeholder="Contraseña">
+                                <input type="password" class="form-control inputRegistro" name="Password_1" id="floatingInputpassword" placeholder="Contraseña" aria-describedby="validationServer03Feedback" required>
+                                <label for="floatingInputpassword">Contraseña</label>
+                                <div id="validationServer03Feedback" class="invalid-feedback">
+                                    <p><strong>Crea tu contraseña siguiendo estas reglas</strong></p>
+                                    <ol>
+                                        <li>Mínimo 8 caracteres de longitud.</li>
+                                        <li>Una letra mayúscula y una minúscula.</li>
+                                        <li>Un número.</li>
+                                        <li>Un carácter que no sea una letra ni número.</li>
+                                    </ol>
+                                </div>
+                                <div class="valid-feedback">
+                                    ¡Muy Bien!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control inputRegistro" name="Password_2" id="floatingInputpasswordConf" placeholder="Contraseña" required>
                                 <label for="floatingInputpasswordConf">Confirmar contraseña</label>
+                                <div id="validationServer03Feedback" class="invalid-feedback">
+                                    La contraseña debe ser igual.
+                                </div>
+                                <div class="valid-feedback">
+                                    ¡Muy Bien!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control inputRegistro" name="Cedula" id="floatingInputCedula" placeholder="Cédula" required>
+                                <label for="floatingInputCedula">Documento de identidad</label>
                             </div>
                         </div>
                     </div>

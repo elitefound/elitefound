@@ -214,8 +214,20 @@
                     <div class="row">
                         <div class="col">
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control inputRegistro" name="Password_1" id="floatingInputpassword" placeholder="Contraseña" required>
+                                <input type="password" class="form-control inputRegistro" name="Password_1" id="floatingInputpassword" placeholder="Contraseña" aria-describedby="validationServer03Feedback" required>
                                 <label for="floatingInputpassword">Contraseña</label>
+                                <div id="validationServer03Feedback" class="invalid-feedback">
+                                    <p><strong>Crea tu contraseña siguiendo estas reglas</strong></p>
+                                    <ol>
+                                        <li>Mínimo 8 caracteres de longitud.</li>
+                                        <li>Una letra mayúscula y una minúscula.</li>
+                                        <li>Un número.</li>
+                                        <li>Un carácter que no sea una letra ni número.</li>
+                                    </ol>
+                                </div>
+                                <div class="valid-feedback">
+                                    ¡Muy Bien!
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -224,13 +236,19 @@
                             <div class="form-floating mb-3">
                                 <input type="password" class="form-control inputRegistro" name="Password_2" id="floatingInputpasswordConf" placeholder="Contraseña" required>
                                 <label for="floatingInputpasswordConf">Confirmar contraseña</label>
+                                <div id="validationServer03Feedback" class="invalid-feedback">
+                                    La contraseña debe ser igual.
+                                </div>
+                                <div class="valid-feedback">
+                                    ¡Muy Bien!
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control inputRegistro" name="Cedula" id="floatingInputCedula" placeholder="Cédula" required>
+                                <input type="text" class="form-control inputRegistro" name="Cedula" id="floatingInputCedula" placeholder="Cédula" required>
                                 <label for="floatingInputCedula">Documento de identidad</label>
                             </div>
                         </div>
