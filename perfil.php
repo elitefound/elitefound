@@ -119,7 +119,7 @@
                                     <div class="col">
                                         <div class="mb-3 text-center">
                                             <label for="linkReferido" class="form-label">Link referido</label>
-                                            <input id="linkReferido" type="text" class="form-control" value="http://192.168.18.31/pd/?id=<?php echo urlencode($userName)?>" readonly>
+                                            <input id="linkReferido" type="text" class="form-control" value="https://elitefound.com?id=<?php echo urlencode($userName)?>" readonly>
                                         </div>
                                     </div>
                                 </div>
