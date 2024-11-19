@@ -1,6 +1,6 @@
 <?php
 require_once("../../../config-ext.php");
-$sql = "SELECT id_plan, plan, descripcion, porcentajeMin, porcentajeMax, fijo, tiempo, pagos, visibilidad, items FROM planes";
+$sql = "SELECT * FROM planes";
 $planesTotales = "";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
@@ -44,7 +44,7 @@ if ($result->num_rows > 0) {
     }
 }
 
-$sql_1 = "SELECT * FROM frecuenciaTransaccion";
+$sql_1 = "SELECT * FROM frecuenciatransaccion";
 $result_1 = $conn->query($sql_1);
 
 if ($result_1->num_rows > 0) {

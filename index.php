@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/tools/bootstrap_5_3_0_min.css">
     <link rel="stylesheet" href="css/tools/getbootstrap.com_docs_5.3_assets_css_docs.css">
     <link rel="stylesheet" href="css/tools/aos.css" type="text/css">
-    <link rel="stylesheet" type="text/css"  href="/css/style.css">
+    <link rel="stylesheet" type="text/css"  href="css/style.css">
 
     <link rel="stylesheet" href="css/home/homeStyle.css">
     <link rel="stylesheet" href="css/home/menu.css">
