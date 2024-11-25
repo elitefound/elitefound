@@ -26,7 +26,7 @@ $menu = '
                         <li><a class="dropdown-item" href="planesAdmin.php">Planes</a></li>
                         <li><a class="dropdown-item" href="billeteraAdmin.php">Billetera</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" href="porcentajes.php">Porcentaje variable</a></li>
                     </ul>
                 </li>
             </ul>
