@@ -171,7 +171,7 @@
                                         <li>
                                             Copie la dirección pública para recibir USDT:
                                             <br>TEWQUwj8f1v7mgtDG85HZ5Xsdr62EUbZw8
-                                            <br>Paga a través de <strong>Trust Wallet</strong>:
+                                            <br>
                                             <br><br><a href="https://link.trustwallet.com/send?coin=195&address=TEWQUwj8f1v7mgtDG85HZ5Xsdr62EUbZw8&token_id=TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t" target="_blank"><img style="width: 60%;" src="img/QRHASH.jpeg" alt="QR"></a>
                                         </li>
                                         <li>

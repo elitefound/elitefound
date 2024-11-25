@@ -43,7 +43,6 @@ a:active {
                                 <tr>
                                     <th>Usuario</th>
                                     <th>Plan</th>
-                                    <th>Billetera</th>
                                     <th>Fecha</th>
                                     <th>Cantidad</th>
                                     <th>Hash</th>

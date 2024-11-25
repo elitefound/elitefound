@@ -61,5 +61,13 @@ if ($result1->num_rows > 0) {
     }
 }
 
+$patrocinador = "";
+$stmt = $conn->prepare("SELECT u.username FROM referidos r JOIN user u ON r.padre = u.id_user WHERE r.hijo = ?");
+$stmt->bind_param("i", $Iduser);
+$stmt->execute();
+$stmt->bind_result($patrocinador);
+$stmt->fetch();
+$stmt->close();
+
 $conn->close();
 ?>

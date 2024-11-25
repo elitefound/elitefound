@@ -116,10 +116,23 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <div class="col text-center">
+                                        <label for="linkReferido" class="form-label">Link referido</label>
+                                        <div class="mb-3 input-group text-center">
+                                            <input id="textoParaCopiar" type="text" class="form-control" value="https://elitefound.com?id=<?php echo urlencode($userName)?>" readonly>
+                                                <button id="botonCopiar" class="btn btn-info">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                                                    </svg>
+                                                </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
                                     <div class="col">
                                         <div class="mb-3 text-center">
-                                            <label for="linkReferido" class="form-label">Link referido</label>
-                                            <input id="linkReferido" type="text" class="form-control" value="https://elitefound.com?id=<?php echo urlencode($userName)?>" readonly>
+                                            <label for="NombrePatrocinador" class="form-label">Patrocinador</label>
+                                            <input id="NombrePatrocinador" type="text" class="form-control" value="<?php echo $patrocinador ?>" readonly>
                                         </div>
                                     </div>
                                 </div>
@@ -278,6 +291,14 @@
         var header = document.querySelector("nav");
         header.classList.toggle("bg-dark", window.scrollY > 0);
     });
+
+    $(document).ready(function() {
+            $('#botonCopiar').click(function() {
+                var texto = $('#textoParaCopiar');
+                texto.select();
+                document.execCommand('copy');
+            });
+        });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
