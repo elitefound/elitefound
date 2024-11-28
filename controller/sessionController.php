@@ -208,7 +208,7 @@ $datos = json_decode($response, true);
 
 if($datos['success'] != 1 && $datos['score'] <= 0.5){
     $proceso = false;
-    $Err_cons .= "Captcha invalido";
+    $Err_cons .= "Captcha invalido"." ".$datos['success']." ".$datos['score']." ".$datos['challenge_ts']." ".$datos['hostname']." ".$datos['action'];
 }
 
 if ($proceso == false) {
