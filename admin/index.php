@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../css/tools/bootstrap_5_3_0_min.css">
     <link rel="stylesheet" href="../css/tools/getbootstrap.com_docs_5.3_assets_css_docs.css">
-
+    <link rel="stylesheet" href="../controller/sweetalert2/sweetalert2.css">
     <title>ADMIN | FOUND CAPITAL COMPANY</title>
 </head>
 <body>
@@ -31,6 +31,7 @@
                                 <th>Email</th>
                                 <th>Actualizar</th>
                                 <th>Entrar como</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -82,5 +83,6 @@
     <script src="../js/tools/cdn.jsdelivr.net_npm_bootstrap@5.3.0_dist_js_bootstrap.bundle.min.js"></script>
     <script src="../js/tools/ajax.googleapis.com_ajax_libs_jquery_1.6.2_jquery.min.js"></script>
     <script src="index.js"></script>
+    <script src="../controller/sweetalert2/sweetalert2.all.js"></script>
 </body>
 </html>

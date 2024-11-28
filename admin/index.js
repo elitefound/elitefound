@@ -25,3 +25,72 @@ function Actualizar(idUser){
         }
     });
 }
+
+function Eliminar(idUser){
+    Swal.fire({
+        title: "¿Estas seguro?",
+        text: "vas a eliminar un usuario",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Si, deseo eliminarlo"
+      }).then((result) => {
+        if (result.isConfirmed) {
+            
+            $.ajax({
+                url: 'eliminarBot.php',
+                type: 'POST',
+                data:{
+                    id: idUser
+                },
+                success: function(data){
+                    Swal.fire({
+                        title: "Proceso completo",
+                        text: data,
+                        icon: "success"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            location.reload();
+                        }
+                    });
+                }
+            });
+        }
+      });
+}
+
+function EnviarCodigo(idUser, correo){
+    Swal.fire({
+        title: "¿Estas seguro?",
+        text: "vas a enviar nuevamente el correo de confirmación",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Si, deseo enviarlo"
+      }).then((result) => {
+        if (result.isConfirmed) {
+
+            $.ajax({
+                url: 'reenviarCodigo.php',
+                type: 'POST',
+                data:{
+                    id: idUser,
+                    correo: correo
+                },
+                success: function(data){
+                    Swal.fire({
+                        title: "Proceso completo",
+                        text: data,
+                        icon: "success"
+                      }).then((result) => {
+                        if (result.isConfirmed) {
+                            location.reload();
+                        }
+                    });
+                }
+            });
+        }
+      });
+}

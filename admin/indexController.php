@@ -3,9 +3,26 @@ require_once("../../../config-ext.php");
 include("../controller/encoded.php");
 $users = "";
 $sql="SELECT * FROM user WHERE UserTipo = '2'";
+$htmlConfirma = "";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
+
+        $confirma = $row['confirma'];
+        if($confirma == 0){
+            $htmlConfirma = "<td>
+                            <div class=\"btn-group\" role=\"group\">
+                                <button id=\"btnEliminar\" type=\"button\" class=\"btn btn-danger\" onclick=\"Eliminar(".$row['id_user'].")\">
+                                    Eliminar
+                                </button>
+                                <button id=\"btnEnviarCodigo\" type=\"button\" class=\"btn btn-warning\" onclick=\"EnviarCodigo('".$row['id_user']."', '".decoded($row['email'])."')\">
+                                    Enviar Código
+                                </button>
+                            </td>";
+        }else{
+            $htmlConfirma = "<td></td>";
+        }
+
         $users .= "<tr>
             <td>
                 ".decoded($row['nombre'])." ".decoded($row['apellido'])."
@@ -30,6 +47,7 @@ if ($result->num_rows > 0) {
                         </button>
                     </form>
                 </td>
+                ".$htmlConfirma."
             </tr>";
     }
 }
