@@ -317,6 +317,10 @@ footer{
     border-radius: 0.5vw;
 }
 
+.grecaptcha-badge { 
+    visibility: hidden;
+}
+
 @media (max-width: 768px) {
     h1, h2, h3 {
         font-size: 15px;

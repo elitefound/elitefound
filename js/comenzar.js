@@ -97,7 +97,17 @@ $(document).ready(function() {
         }
 
         if(proceder == true){
-            $('#registroForm').submit();
+            $("#registrarse").click(function(){
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LdDK4sqAAAAAC_ZMNbh9LH2V-BsW56Swj7QrDPz', {
+                        action: 'validarUsuario'
+                    }).then(function(token) {
+                        $('#registroForm').prepend('<input type="hidden" name="token" value="' + token + '">');
+                        $('#registroForm').prepend('<input type="hidden" name="action" value="validarUsuario">');
+                        $('#registroForm').submit();
+                    });
+                });
+            })
         }
     });
 });

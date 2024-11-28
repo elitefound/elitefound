@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/home/menu.css">
 
     <title>INICIO | ELITE FOUND</title>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdDK4sqAAAAAC_ZMNbh9LH2V-BsW56Swj7QrDPz"></script>
 </head>
 <body>
 
@@ -267,6 +268,7 @@
                 <div class="modal-footer" style="border: none;">
                     <div class="row">
                         <div class="col">
+                            <input type="text" name="condicion" id="condicion" style="display: none">
                             <button id="registrarse" type="button" class="btn botonRegistro">Regístrate ahora</button>
                         </div>
                     </div>  

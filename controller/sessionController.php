@@ -49,6 +49,11 @@ if (!isset($_POST['terminosCheck'])) {
     $proceso = false;
 }
 
+if (!isset($_POST['condicion'])) {
+    $Err_cons .= "Eres un robot";
+    $proceso = false;
+}
+
 $Nombre = "";
 $Apellido = "";
 $Email_user = "";
@@ -185,6 +190,25 @@ if (empty($_POST["Password_2"])) {
         $Err_cons .= "Las contraseñas no coinciden.<br>";
         $proceso = false;
     }
+}
+
+define('CLAVE', '6LdDK4sqAAAAAOXMukDv8GzGEJiWWeAwu2MZFkRm');
+$token = $_POST['token'];
+$action = $_POST['action'];
+
+$cu = curl_init();
+curl_setopt($cu, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
+curl_setopt($cu, CURLOPT_POST, 1);
+curl_setopt($cu, CURLOPT_POSTFIELDS, http_build_query(array('secret' => CLAVE, 'response' => $token)));
+curl_setopt($cu, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($cu);
+curl_close($cu);
+
+$datos = json_decode($response, true);
+
+if($datos['success'] != 1 && $datos['score'] <= 0.5){
+    $proceso = false;
+    $Err_cons .= "Captcha invalido";
 }
 
 if ($proceso == false) {
