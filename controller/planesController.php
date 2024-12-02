@@ -19,12 +19,16 @@ if ($result->num_rows > 0) {
         $cadena = $row['items'];
         $elementos = explode("|", $cadena);
         foreach ($elementos as $elemento) {
-            $listado .= '<p class="card-text">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32.42" height="25.5" viewBox="0 0 32.42 25.5">
+            $listado .= '<tr>
+                            <td>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32.42" height="25.5" viewBox="0 0 32.42 25.5">
                                 <path id="Trazado_376" data-name="Trazado 376" d="M340.913,6932.681l7.98,7.98,22.319-22.318" transform="translate(-339.853 -6917.282)" fill="none" stroke="#39b54a" stroke-miterlimit="10" stroke-width="3"/>
                             </svg>
-                            '.$elemento.'
-                        </p>';
+                            </td>
+                            <td>
+                                '.$elemento.'
+                            </td>
+                        </tr>';
         }
 
         if($styloSeccion === 0){
@@ -39,9 +43,9 @@ if ($result->num_rows > 0) {
 
         $articulosPlanes .= '
         <div class="row">
-            <div class="col-md-6"><p>'.$descripcion.'</p></div>
+            <div class="col-md-6 p-4"><p class="pt-3">'.$descripcion.'</p></div>
             <div class="col-md-6">
-                <article>
+                <article class="m-3">
                     <div class="tarjeta" data-aos="flip-right">
                         <div class="card">
                             <div class="card-body">
@@ -51,9 +55,9 @@ if ($result->num_rows > 0) {
                                         <h6 class="card-subtitle mb-2 text-body-secondary">OBTENGA SU PRIMERA GANANCIA</h6>
                                     </div>
                                     <div class="col-3">'.$imagenPlan.'</div>
-                                </div>
-                                '.$listado.'<br>
-                                <button type="button" class="btn btn-articule" data-bs-toggle="modal" data-bs-target="#Registro">Regístrate</button>
+                                </div><table class="table table-borderless table-hover">
+                                '.$listado.'</table></div><br>
+                                <button type="button" class="btn btn-articule mb-3" data-bs-toggle="modal" data-bs-target="#Registro">Regístrate</button>
                                 <p class="text-center">*Términos y condiciones</p></div></div></article></div></div></section>';
 
     }

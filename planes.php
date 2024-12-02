@@ -306,6 +306,7 @@ echo $articulosPlanes;
     window.addEventListener("scroll", function () {
         var header = document.querySelector("nav");
         header.classList.toggle("bg-dark", window.scrollY > 0);
+        ajustarClase();
     });
 
     function mercados(){
@@ -318,8 +319,6 @@ echo $articulosPlanes;
         const elemento = document.querySelector("nav");
         if (window.innerWidth <= 768) {
             elemento.classList.add('bg-dark');
-        }else{
-            elemento.classList.remove('bg-dark');
         }
     }
 
