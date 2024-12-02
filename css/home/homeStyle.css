@@ -124,7 +124,7 @@
         grid-template-columns: repeat(5, 1fr);
         grid-template-areas:    ". customers transactions payments ."
                                 ". . . . ."
-                                ". info info info ."
+                                "info info info info info"
                                 ". ilustracion ilustracion ilustracion .";
         height: auto !important;
     }

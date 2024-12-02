@@ -288,8 +288,8 @@
     <div class="customers marcador"><!--<p>254k</p><p>total customers</p>--></div>
     <div class="transactions marcador"><!--<p>50M</p><p>total transactions</p>--></div>
     <div class="payments marcador"><!--<p>2631</p><p>total daily Payments</p>--></div>
-    <div data-aos="zoom-in-right" class="info"><p>En ELITE FOUND, entendemos la importancia de tomar decisiones financieras inteligentes y seguras. Nuestro compromiso es brindarte la oportunidad de invertir en algunos de los mercados más sólidos, respetados y diversificados del mundo, incluyendo el S&P 500, la Bolsa de Valores de Tokio, la Bolsa de Londres, el NASDAQ, así como en materias primas y por supuesto, en criptomonedas con gran proyección de crecimiento. Aquí, no solo te brindamos un camino hacia la inversión, sino también hacia la confianza y la rentabilidad.</p></div>
-    <div data-aos="zoom-in-left" class="ilustracion"><img src="img/home/ilustracion1.png" alt=""></div>
+    <div data-aos="zoom-in-right" class="info m-3"><p>En ELITE FOUND, entendemos la importancia de tomar decisiones financieras inteligentes y seguras. Nuestro compromiso es brindarte la oportunidad de invertir en algunos de los mercados más sólidos, respetados y diversificados del mundo, incluyendo el S&P 500, la Bolsa de Valores de Tokio, la Bolsa de Londres, el NASDAQ, así como en materias primas y por supuesto, en criptomonedas con gran proyección de crecimiento. Aquí, no solo te brindamos un camino hacia la inversión, sino también hacia la confianza y la rentabilidad.</p></div>
+    <div data-aos="zoom-in-left" class="ilustracion mb-3"><img src="img/home/ilustracion1.png" alt=""></div>
 </section>
 <section class="seccion_clara" id="Mercados">
     <div data-aos="zoom-in" id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
@@ -298,7 +298,7 @@
                 <div class="slideHome">
                     <div class="izquierda">
                         <div class="texto_1 centrarElementos">
-                            <div class="texto_1_1">
+                            <div class="texto_1_1 my-3">
                                 <h2 style="text-align: left;">
                                     MATERIAS PRIMAS&nbsp;&nbsp;
                                     <svg xmlns="http://www.w3.org/2000/svg" width="46.508" height="27.916" viewBox="0 0 46.508 27.916">
@@ -314,7 +314,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="derecha">
+                    <div class="derecha my-3">
                         <div class="videoSlide centrarElementos">
                             <img src="img/home/Meterias primas.gif " alt="">
                         </div>
@@ -323,14 +323,14 @@
             </div>
             <div class="carousel-item">
                 <div class="slideHome">
-                    <div class="izquierda">
+                    <div class="izquierda my-3">
                         <div class="videoSlide centrarElementos">
                             <img src="img/home/ETF'S.gif" alt="">
                         </div>
                     </div>
                     <div class="derecha">
                         <div class="texto_1 centrarElementos">
-                            <div class="texto_1_1">
+                            <div class="texto_1_1 my-3">
                                 <h2 style="text-align: right;"> 
                                     <svg xmlns="http://www.w3.org/2000/svg" width="33.5" height="37.5" viewBox="0 0 33.5 37.5">
                                         <g id="Grupo_1228" data-name="Grupo 1228" transform="translate(-1672.5 -3712.5)">
@@ -354,7 +354,7 @@
                 <div class="slideHome">
                     <div class="izquierda">
                         <div class="texto_1 centrarElementos">
-                            <div class="texto_1_1">
+                            <div class="texto_1_1 my-3">
                                 <h2 style="text-align: left;">
                                     ÍNDICES BURSÁTILES&nbsp;&nbsp;
                                     <svg xmlns="http://www.w3.org/2000/svg" width="44.109" height="49.45" viewBox="0 0 44.109 49.45">
@@ -373,7 +373,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="derecha">
+                    <div class="derecha my-3">
                         <div class="videoSlide centrarElementos">
                             <img src="img/home/Intro.gif" alt="">
                         </div>
@@ -392,11 +392,11 @@
     </div>
 </section>
 <section class="seccion_oscura">
-    <h1>¿POR QUÉ INVERTIR CON NOSOTROS?</h1>
+    <h1 class="my-3">¿POR QUÉ INVERTIR CON NOSOTROS?</h1>
     <div class="galeriaX4">
         <article class="row flex-md-row justify-content-md-center" data-aos="zoom-in-right">
              <div class="col-3 centrarElementos ilustracion"><img src="img/home/acompañamiento.png" alt=""></div>
-             <div class="col-9"><h3>Acompañamiento</h3><p>Tu éxito es nuestro éxito. Ofrecemos un servicio al cliente excepcional y estamos disponibles para responder a tus preguntas y ayudarte en cada paso del camino. Tu satisfacción es lo más importante para nosotros.</p></div>
+             <div class="col-9"><h3>Acompañamiento<br><br></h3><p>Tu éxito es nuestro éxito. Ofrecemos un servicio al cliente excepcional y estamos disponibles para responder a tus preguntas y ayudarte en cada paso del camino. Tu satisfacción es lo más importante para nosotros.</p></div>
         </article>
         <article class="row flex-md-row justify-content-md-center" data-aos="zoom-in-left">
              <div class="col-3 centrarElementos ilustracion"><img src="img/home/rentabilidad.png" alt=""></div>
@@ -404,18 +404,18 @@
         </article>
         <article class="row flex-md-row justify-content-md-center" data-aos="zoom-in-right">
              <div class="col-3 centrarElementos ilustracion"><img src="img/home/universal.png" alt=""></div>
-             <div class="col-9"><h3>Acceso Universal</h3><p>No importa si eres un inversor experimentado o si apenas estás empezando tu viaje en el mundo de las inversiones. En ELITE FOUND, todos son bienvenidos. Nuestro de paquete se adapta a diferentes niveles de inversión y experiencia.</p></div>
+             <div class="col-9"><h3>Acceso<br>Universal</h3><p>No importa si eres un inversor experimentado o si apenas estás empezando tu viaje en el mundo de las inversiones. En ELITE FOUND, todos son bienvenidos. Nuestro de paquete se adapta a diferentes niveles de inversión y experiencia.</p></div>
         </article>
         <article class="row flex-md-row justify-content-md-center" data-aos="zoom-in-left">
              <div class="col-3 centrarElementos ilustracion"><img src="img/home/seguridad.png" alt=""></div>
-             <div class="col-9"><h3>Seguridad</h3><p>Contamos con los más altps estándares de seguridad sobre tu información.</p></div>
+             <div class="col-9"><h3>Seguridad<br><br></h3><p>Contamos con los más altos estándares de seguridad sobre tu información.</p></div>
         </article>
     </div>
 </section>
 <section class="seccion_clara">
-    <h1>PLANES</h1>
+    <h1 class="mt-3">PLANES</h1>
     <div class="articulos">
-        <?php  echo empty($planes) || $planes == 0 ? "" : $planes ?>
+        <?php echo empty($planes) || $planes == 0 ? "" : $planes ?>
     </div>
 </section>
 <section class="imagenFondo seccion_6" style="height: 56.4vw;">
@@ -457,6 +457,7 @@
     window.addEventListener("scroll", function () {
         var header = document.querySelector("nav");
         header.classList.toggle("bg-dark", window.scrollY > 0);
+        ajustarClase();
     });
 
     function mercados(){
@@ -469,8 +470,6 @@
         const elemento = document.querySelector("nav");
         if (window.innerWidth <= 768) {
             elemento.classList.add('bg-dark');
-        }else{
-            elemento.classList.remove('bg-dark');
         }
     }
 

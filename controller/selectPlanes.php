@@ -23,21 +23,28 @@ if ($result->num_rows > 0) {
                             <div class="col-3">
                                 <img src="img/home/planComercial.png" alt="">
                             </div>
-                        </div>';
+                        </div><table class="table table-borderless table-hover">';
         $cadena = $row['items'];
+
         $elementos = explode("|", $cadena);
         foreach ($elementos as $elemento) {
-            $listado .= '<p class="card-text">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32.42" height="25.5" viewBox="0 0 32.42 25.5">
+            $listado .= '<tr>
+                            <td>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32.42" height="25.5" viewBox="0 0 32.42 25.5">
                                 <path id="Trazado_376" data-name="Trazado 376" d="M340.913,6932.681l7.98,7.98,22.319-22.318" transform="translate(-339.853 -6917.282)" fill="none" stroke="#39b54a" stroke-miterlimit="10" stroke-width="3"/>
                             </svg>
-                            '.$elemento.'
-                        </p>';
+                            </td>
+                            <td>
+                                '.$elemento.'
+                            </td>
+                        </tr>';
         }
+
         $planes .= $listado.'
+                    </table>
                     </div>
                     <br>
-                    <a href="planes.php#inicial" class="btn btn-articule">Saber más</a>
+                    <a href="planes.php#inicial" class="btn btn-articule mb-3">Saber más</a>
                     <p class="text-center">*Términos y condiciones</p>
                 </div>
             </div>

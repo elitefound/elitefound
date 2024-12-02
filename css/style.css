@@ -26,10 +26,16 @@ h1, h2, h3 {
     text-align: center;
 }
 
-p, a, table, li {
+p, a{
     font-family: 'NotoSans-Regular', sans-serif;
     font-size: 1.3vw;
     text-align: justify;
+}
+
+table, li{
+    font-family: 'NotoSans-Regular', sans-serif;
+    font-size: 1.3vw;
+    text-align: left;
 }
 
 body{
@@ -135,7 +141,8 @@ section{
     background-color: var(--azul);
     color: var(--blanco);
     font-size: 1.3vw;
-    width: 100%;
+    width: 90%;
+    margin: auto;
 }
 
 .btn-articule:hover{
@@ -326,7 +333,7 @@ footer{
         font-size: 15px;
     }
 
-    p{
+    p, table{
         font-size: 10px;
     }
 
