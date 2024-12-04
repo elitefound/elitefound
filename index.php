@@ -283,9 +283,53 @@
 
 <?php echo isset($prueba) ? $prueba : ''; ?>
 
-<section class="imagenFondo seccion_1 centrarElementos" style="height: 56.4vw;">
-    <h2>Invierte con sabiduría<hr></h2>
-</section>
+    <div id="carouselExampleCaptions" class="carousel slide seccion_1 centrarElementos" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="6000">
+                <img src="img/home/Invierte con sabiduría.jpeg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center" style="top: 50%; transform: translateY(-50%);">
+                    <h1>Invierte con sabiduría</h1>
+                    <h4>Haz que cada decisión financiera cuente hacia un futuro extraordinario.</h4>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="6000">
+                <img src="img/home/Transforma tus oportunidades.jpeg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center" style="top: 50%; transform: translateY(-50%);">
+                    <h1>Transforma tus oportunidades</h1>
+                    <h4>Convierte tus decisiones en un legado financiero que trascienda generaciones.</h4>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="6000">
+                <img src="img/home/Crecimiento sin límites.jpeg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center" style="top: 50%; transform: translateY(-50%);">
+                    <h1>Crecimiento sin límites</h1>
+                    <h4>Tu capital no solo crece, se multiplica. Únete a la nueva.</h4>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="6000">
+                <img src="img/home/Un futuro brillante comienza ahora.jpeg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center" style="top: 50%; transform: translateY(-50%);">
+                    <h1>Un futuro brillante comienza ahora</h1>
+                    <h4>Haz de cada inversión una historia de éxito. Donde tus sueños financieros se hacen realidad.</h4>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
 <section class="seccion_oscura seccion_2" style="height: 56.4vw;">
     <div class="customers marcador"><!--<p>254k</p><p>total customers</p>--></div>
     <div class="transactions marcador"><!--<p>50M</p><p>total transactions</p>--></div>

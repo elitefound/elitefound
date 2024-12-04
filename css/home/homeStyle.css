@@ -1,6 +1,10 @@
 /* seccion 1 */
-.seccion_1{
-    background-image: url(../../img/home/homeFondo.png);
+.carousel-item > img{
+    filter: brightness(0.5) contrast(1.2);
+}
+
+.carousel-caption{
+    color: #EAEAEA;
 }
 
 .seccion_1 h2{
