@@ -22,6 +22,8 @@ if(isset($_GET['3m41l'])){
     <link rel="stylesheet" href="css/home/homeStyle.css">
     <link rel="stylesheet" href="css/home/menu.css">
 
+    <link rel="stylesheet" href="css/criptomonedas.css">
+
     <title>CONFIRMA EMAIL | ELITE FOUND</title>
 </head>
 <style>
@@ -126,11 +128,18 @@ if(isset($_GET['3m41l'])){
             <div class="col"><p style="text-align: center;">Privacidad y legal</p></div>
             <div class="col"><p style="text-align: left;">Contacto</p></div>
         </div>
+        <div class="row">
+            <div class="col">
+                <div class="marquee-container">
+                    <div class="marquee" id="cryptoTable"><p>Cargando valores del mercado.... Cargando valores del mercado.... Cargando valores del mercado.... Cargando valores del mercado.... Cargando valores del mercado.... Cargando valores del mercado.... Cargando valores del mercado....</p></div>
+                </div>
+            </div>
+        </div>
     </footer>
 </div>
 <script src="js/tools/cdn.jsdelivr.net_npm_bootstrap@5.3.0_dist_js_bootstrap.bundle.min.js"></script>
 <script src="js/tools/ajax.googleapis.com_ajax_libs_jquery_1.6.2_jquery.min.js"></script>
-
+<script src="js/criptomonedas.js"></script>
 <script>
     $(document).ready(function() {
         ajustarClase();

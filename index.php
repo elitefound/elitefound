@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="css/home/homeStyle.css">
     <link rel="stylesheet" href="css/home/menu.css">
 
+    <link rel="stylesheet" href="css/criptomonedas.css">
+
     <title>INICIO | ELITE FOUND</title>
     <script src="https://www.google.com/recaptcha/api.js?render=6LdDK4sqAAAAAC_ZMNbh9LH2V-BsW56Swj7QrDPz"></script>
 </head>
@@ -441,6 +443,13 @@
         <div class="col"><p style="text-align: center;">Privacidad y legal</p></div>
         <div class="col"><p style="text-align: left;">Contacto</p></div>
     </div>
+    <div class="row">
+        <div class="col">
+            <div class="marquee-container">
+                <div class="marquee" id="cryptoTable"><p>Cargando valores del mercado.... Cargando valores del mercado.... Cargando valores del mercado.... Cargando valores del mercado.... Cargando valores del mercado.... Cargando valores del mercado.... Cargando valores del mercado....</p></div>
+            </div>
+        </div>
+    </div>
 </footer>
 
 <script src="js/tools/cdn.jsdelivr.net_npm_bootstrap@5.3.0_dist_js_bootstrap.bundle.min.js"></script>
@@ -448,10 +457,12 @@
 <script src="js/tools/aos.js"></script>
 <script src="js/comenzar.js"></script>
 <script src="js/session.js"></script>
+<script src="js/criptomonedas.js"></script>
 <script>
     $(document).ready(function() {
         AOS.init();
         ajustarClase();
+        fetchCryptoPrices();
     });
 
     window.addEventListener("scroll", function () {

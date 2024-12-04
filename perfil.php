@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/home/menu.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <title>PERFIL | ELITE FOUND</title>
+    <link rel="stylesheet" href="css/criptomonedas.css">
 </head>
 <body>
 <!-- inicio del menú -->
@@ -277,11 +278,19 @@
         <div class="col"><p style="text-align: center;">Privacidad y legal</p></div>
         <div class="col"><p style="text-align: left;">Contacto</p></div>
     </div>
+    <div class="row">
+        <div class="col">
+            <div class="marquee-container">
+                <div class="marquee" id="cryptoTable"><p>Cargando valores del mercado.... Cargando valores del mercado.... Cargando valores del mercado.... Cargando valores del mercado.... Cargando valores del mercado.... Cargando valores del mercado.... Cargando valores del mercado....</p></div>
+            </div>
+        </div>
+    </div>
 </footer>
 <script src="js/tools/cdn.jsdelivr.net_npm_bootstrap@5.3.0_dist_js_bootstrap.bundle.min.js"></script>
 <script src="js/tools/ajax.googleapis.com_ajax_libs_jquery_1.6.2_jquery.min.js"></script>
 <script src="js/tools/aos.js"></script>
 <script src="js/perfil.js"></script>
+<script src="js/criptomonedas.js"></script>
 <script>
     $(document).ready(function() {
         AOS.init();
