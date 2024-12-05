@@ -309,7 +309,7 @@
                 <img src="img/home/Crecimiento sin límites.jpeg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-flex flex-column justify-content-center align-items-center" style="top: 50%; transform: translateY(-50%);">
                     <h1>Crecimiento sin límites</h1>
-                    <h4>Tu capital no solo crece, se multiplica. Únete a la nueva.</h4>
+                    <h4>Tu capital no solo crece, se multiplica. Únete a la nueva era.</h4>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="6000">
