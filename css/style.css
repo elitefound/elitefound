@@ -32,6 +32,11 @@ p, a{
     text-align: justify;
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
 table, li{
     font-family: 'NotoSans-Regular', sans-serif;
     font-size: 1.3vw;
@@ -333,7 +338,7 @@ footer{
         font-size: 15px;
     }
 
-    p, table{
+    p, table, a{
         font-size: 10px;
     }
 

@@ -1,6 +1,5 @@
 <?php
     include(dirname(__FILE__).'/controller/sessionController.php');
-    include(dirname(__FILE__).'/controller/selectPlanes.php');
 ?>
 
 <!DOCTYPE html>
@@ -20,13 +19,12 @@
 
     <link rel="stylesheet" href="css/criptomonedas.css">
 
-    <title>INICIO | ELITE FOUND</title>
+    <title>CONTACTO | ELITE FOUND</title>
     <script src="https://www.google.com/recaptcha/api.js?render=6LdDK4sqAAAAAC_ZMNbh9LH2V-BsW56Swj7QrDPz"></script>
 </head>
 <body>
-
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark">
+<nav class="navbar navbar-expand-md navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="index.php">
                 <svg class="ps-1" id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 571.13 607.86">
@@ -45,7 +43,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-centrado">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" onclick="mercados()" style="cursor: pointer;">Mercados</a>
+                        <a class="nav-link" aria-current="page" href="index.php#Mercados" style="cursor: pointer;">Mercados</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="planes.php">Planes</a>
@@ -280,195 +278,41 @@
         </div>
     </div>
 </div>
-
-<?php echo isset($prueba) ? $prueba : ''; ?>
-
-    <div id="carouselExampleCaptions" class="carousel slide seccion_1 centrarElementos" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="6000">
-                <img src="img/home/Invierte con sabiduría.jpeg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center" style="top: 50%; transform: translateY(-50%);">
-                    <h1>Invierte con sabiduría</h1>
-                    <h4>Haz que cada decisión financiera cuente hacia un futuro extraordinario.</h4>
-                </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="6000">
-                <img src="img/home/Transforma tus oportunidades.jpeg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center" style="top: 50%; transform: translateY(-50%);">
-                    <h1>Transforma tus oportunidades</h1>
-                    <h4>Convierte tus decisiones en un legado financiero que trascienda generaciones.</h4>
-                </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="6000">
-                <img src="img/home/Crecimiento sin límites.jpeg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center" style="top: 50%; transform: translateY(-50%);">
-                    <h1>Crecimiento sin límites</h1>
-                    <h4>Tu capital no solo crece, se multiplica. Únete a la nueva era.</h4>
-                </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="6000">
-                <img src="img/home/Un futuro brillante comienza ahora.jpeg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center" style="top: 50%; transform: translateY(-50%);">
-                    <h1>Un futuro brillante comienza ahora</h1>
-                    <h4>Haz de cada inversión una historia de éxito. Donde tus sueños financieros se hacen realidad.</h4>
-                </div>
+<section class="seccion_oscura seccion_1">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <h1 class="m-3">¡Invierte con nosotros hoy mismo!</h1>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-        </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-
-<section class="seccion_oscura seccion_2" style="height: 56.4vw;">
-    <div class="customers marcador"><!--<p>254k</p><p>total customers</p>--></div>
-    <div class="transactions marcador"><!--<p>50M</p><p>total transactions</p>--></div>
-    <div class="payments marcador"><!--<p>2631</p><p>total daily Payments</p>--></div>
-    <div data-aos="zoom-in-right" class="info m-3"><p>En ELITE FOUND, entendemos la importancia de tomar decisiones financieras inteligentes y seguras. Nuestro compromiso es brindarte la oportunidad de invertir en algunos de los mercados más sólidos, respetados y diversificados del mundo, incluyendo el S&P 500, la Bolsa de Valores de Tokio, la Bolsa de Londres, el NASDAQ, así como en materias primas y por supuesto, en criptomonedas con gran proyección de crecimiento. Aquí, no solo te brindamos un camino hacia la inversión, sino también hacia la confianza y la rentabilidad.</p></div>
-    <div data-aos="zoom-in-left" class="ilustracion mb-3"><img src="img/home/ilustracion1.png" alt=""></div>
-</section>
-<section class="seccion_clara" id="Mercados">
-    <div data-aos="zoom-in" id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="slideHome">
-                    <div class="izquierda">
-                        <div class="texto_1 centrarElementos">
-                            <div class="texto_1_1 my-3">
-                                <h2 style="text-align: left;">
-                                    MATERIAS PRIMAS&nbsp;&nbsp;
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="46.508" height="27.916" viewBox="0 0 46.508 27.916">
-                                        <g id="Grupo_1232" data-name="Grupo 1232" transform="translate(-501.512 -2615)">
-                                            <path id="Trazado_422" data-name="Trazado 422" d="M526.084,2641.916h19.47a1.443,1.443,0,0,0,1.289-2.094l-4.373-8.671a1.845,1.845,0,0,0-1.648-1.015h-9.914a2.215,2.215,0,0,0-2.028,1.325l-3.87,8.811A1.173,1.173,0,0,0,526.084,2641.916Z" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                            <path id="Trazado_423" data-name="Trazado 423" d="M503.7,2641.916h19.47a1.444,1.444,0,0,0,1.289-2.094l-4.373-8.671a1.847,1.847,0,0,0-1.649-1.015h-9.914a2.214,2.214,0,0,0-2.027,1.325l-3.87,8.811A1.173,1.173,0,0,0,503.7,2641.916Z" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                            <path id="Trazado_424" data-name="Trazado 424" d="M515.482,2627.78h19.47a1.443,1.443,0,0,0,1.289-2.094l-4.373-8.671A1.847,1.847,0,0,0,530.22,2616h-9.914a2.215,2.215,0,0,0-2.028,1.324l-3.87,8.812A1.173,1.173,0,0,0,515.482,2627.78Z" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                        </g>
-                                    </svg>
-                                </h2>
-                                <br>
-                                <p>Desde la perspectiva de una cartera de inversión, incorporar materias primas en su estrategia es una elección inteligente para diversificar más allá de los activos convencionales. En ELITE FOUND, le damos la oportunidad de aprovechar los mercados globales de metales preciosos y energéticos más destacados. Contamos con una presencia en más de 20 materias primas a nivel internacional y le ofrecemos la flexibilidad necesaria en cuanto al tamaño de sus inversiones, lo que facilita su participación en estos mercados con confianza.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="derecha my-3">
-                        <div class="videoSlide centrarElementos">
-                            <img src="img/home/Meterias primas.gif " alt="">
-                        </div>
-                    </div>
-                </div>
+        <div class="row">
+            <div class="col-md-7">
+                <p>Visita nuestro sitio web para obtener más información y regístrate para crear tu cuenta. Descubre nuevas oportunidades de inversión con Elite Found, tu socio confiable en la creación de riqueza.</p><p>Estamos aquí para ayudarte. Si tienes alguna pregunta o deseas más información sobre nuestros servicios, no dudes en ponerte en contacto con nosotros. Nuestro equipo está listo para ofrecerte soluciones personalizadas. ¡Esperamos saber de ti pronto!</p><br>
+                <table>
+                    <tr>
+                        <td class="p-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-at-fill" viewBox="0 0 16 16">
+                                <path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.5 4.5 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586zM16 9.671V4.697l-5.803 3.546.338.208A4.5 4.5 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671"/>
+                                <path d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791"/>
+                            </svg>
+                        </td>
+                        <td><a href="mailto:support@elitefound.com" target="_blank"><strong>Email: </strong>support@elitefound.com</a></td>
+                    </tr>
+                    <tr>
+                        <td class="p-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16">
+                                <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
+                            </svg>
+                        </td>
+                        <td><a href="https://elitefound.com/"><strong>Sitio web: </strong>http://elitefound.com/</a></td>
+                    </tr>
+                </table>
             </div>
-            <div class="carousel-item">
-                <div class="slideHome">
-                    <div class="izquierda my-3">
-                        <div class="videoSlide centrarElementos">
-                            <img src="img/home/ETF'S.gif" alt="">
-                        </div>
-                    </div>
-                    <div class="derecha">
-                        <div class="texto_1 centrarElementos">
-                            <div class="texto_1_1 my-3">
-                                <h2 style="text-align: right;"> 
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="33.5" height="37.5" viewBox="0 0 33.5 37.5">
-                                        <g id="Grupo_1228" data-name="Grupo 1228" transform="translate(-1672.5 -3712.5)">
-                                            <rect id="Rectángulo_32" data-name="Rectángulo 32" width="23" height="29" rx="1.734" transform="translate(1673.5 3713.5)" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                            <rect id="Rectángulo_33" data-name="Rectángulo 33" width="23" height="29" rx="1.734" transform="translate(1682 3720)" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                            <line id="Línea_9" data-name="Línea 9" x2="12.239" transform="translate(1687.5 3729.5)" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                            <line id="Línea_10" data-name="Línea 10" x2="12.239" transform="translate(1687.5 3734.5)" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                            <line id="Línea_11" data-name="Línea 11" x2="12.239" transform="translate(1687.5 3739.5)" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                        </g>
-                                    </svg>&nbsp;&nbsp;
-                                    ETF’S
-                                </h2>
-                                <br>
-                                <p>Considerar la incorporación de ETFs (Exchange Traded Funds) en su estrategia es una decisión inteligente para diversificar su cartera más allá de las inversiones tradicionales. Los ETFs ofrecen una forma eficiente y accesible de invertir en una amplia gama de activos financieros, desde acciones y bonos hasta sectores específicos de la economía. En ELITE FOUND, le brindamos la oportunidad de explorar y capitalizar en una variedad de ETFs líderes a nivel mundial, proporcionándole la flexibilidad y la confianza necesarias para participar en estos mercados de manera efectiva.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="slideHome">
-                    <div class="izquierda">
-                        <div class="texto_1 centrarElementos">
-                            <div class="texto_1_1 my-3">
-                                <h2 style="text-align: left;">
-                                    ÍNDICES BURSÁTILES&nbsp;&nbsp;
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="44.109" height="49.45" viewBox="0 0 44.109 49.45">
-                                        <g id="Grupo_1225" data-name="Grupo 1225" transform="translate(-569.5 -4824.55)">
-                                            <line id="Línea_6" data-name="Línea 6" y2="37.341" transform="translate(607.241 4830.241)" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                            <line id="Línea_7" data-name="Línea 7" y2="49.45" transform="translate(591.307 4824.55)" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                            <line id="Línea_8" data-name="Línea 8" y2="38.18" transform="translate(575.621 4830.241)" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                            <rect id="Rectángulo_28" data-name="Rectángulo 28" width="10.243" height="35.281" rx="3.34" transform="translate(586.433 4830.184)" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                            <rect id="Rectángulo_29" data-name="Rectángulo 29" width="10.243" height="23.9" rx="3.117" transform="translate(602.367 4839.288)" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                            <rect id="Rectángulo_30" data-name="Rectángulo 30" width="10.243" height="27.314" rx="3.266" transform="translate(570.5 4834.736)" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                        </g>
-                                    </svg>
-                                </h2>
-                                <br>
-                                <p>Explorar los índices bursátiles e incluirlos en su estrategia es una elección inteligente para ampliar su cartera. Estos índices son una herramienta efectiva para rastrear y capitalizar en el desempeño de los mercados financieros, reflejando a menudo segmentos específicos de la economía o regiones geográficas. En ELITE FOUND, estamos para brindarle la flexibilidad y la confianza necesarias para diversificar su cartera de manera estratégica.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="derecha my-3">
-                        <div class="videoSlide centrarElementos">
-                            <img src="img/home/Intro.gif" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="col-md-5"><img class="img-thumbnail" src="img/home/contacto.jpeg" alt=""></div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
 </section>
-<section class="seccion_oscura">
-    <h1 class="my-3">¿POR QUÉ INVERTIR CON NOSOTROS?</h1>
-    <div class="galeriaX4">
-        <article class="row flex-md-row justify-content-md-center" data-aos="zoom-in-right">
-             <div class="col-3 centrarElementos ilustracion"><img src="img/home/acompañamiento.png" alt=""></div>
-             <div class="col-9"><h3>Acompañamiento<br><br></h3><p>Tu éxito es nuestro éxito. Ofrecemos un servicio al cliente excepcional y estamos disponibles para responder a tus preguntas y ayudarte en cada paso del camino. Tu satisfacción es lo más importante para nosotros.</p></div>
-        </article>
-        <article class="row flex-md-row justify-content-md-center" data-aos="zoom-in-left">
-             <div class="col-3 centrarElementos ilustracion"><img src="img/home/rentabilidad.png" alt=""></div>
-             <div class="col-9"><h3>Rentabilidad Consistente</h3><p>Nuestro objetivo es claro: queremos ayudarte a lograr un crecimiento financiero sostenible. Ofrecemos un atractivo porcentaje de rentabilidad semanal en todos nuestros paquetes de inversión. Ya sea que estés comenzando con $50 o estés listo para invertir $10000, nuestro enfoque en la rentabilidad constante puede ayudarte a alcanzar tus metas financieras.</p></div>
-        </article>
-        <article class="row flex-md-row justify-content-md-center" data-aos="zoom-in-right">
-             <div class="col-3 centrarElementos ilustracion"><img src="img/home/universal.png" alt=""></div>
-             <div class="col-9"><h3>Acceso<br>Universal</h3><p>No importa si eres un inversor experimentado o si apenas estás empezando tu viaje en el mundo de las inversiones. En ELITE FOUND, todos son bienvenidos. Nuestro de paquete se adapta a diferentes niveles de inversión y experiencia.</p></div>
-        </article>
-        <article class="row flex-md-row justify-content-md-center" data-aos="zoom-in-left">
-             <div class="col-3 centrarElementos ilustracion"><img src="img/home/seguridad.png" alt=""></div>
-             <div class="col-9"><h3>Seguridad<br><br></h3><p>Contamos con los más altos estándares de seguridad sobre tu información.</p></div>
-        </article>
-    </div>
-</section>
-<section class="seccion_clara">
-    <h1 class="mt-3">PLANES</h1>
-    <div class="articulos">
-        <?php echo empty($planes) || $planes == 0 ? "" : $planes ?>
-    </div>
-</section>
-<section class="imagenFondo seccion_6" style="height: 56.4vw;">
-    <div class="leyenda seccion_oscura" data-aos="flip-up">
-        <p>Con gran orgullo, mantenemos firmemente nuestro compromiso con la responsabilidad y la coherencia hacia nuestros clientes, nuestra familia y todos aquellos que han depositado su confianza en nosotros.</p>
-    </div>
-</section>
+
 <footer class="seccion_oscura">
     <div class="row">
         <div class="col">
