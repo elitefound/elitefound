@@ -63,7 +63,7 @@ if(isset($_GET['3m41l'])){
                         <a class="nav-link" href="planes.php">Planes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Compañía</a>
+                        <a class="nav-link" href="company.php">Compañía</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">

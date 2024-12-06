@@ -1,5 +1,6 @@
 <?php
     include(dirname(__FILE__).'/controller/sessionController.php');
+    include(dirname(__FILE__).'/controller/selectPlanes.php');
 ?>
 
 <!DOCTYPE html>
@@ -19,12 +20,31 @@
 
     <link rel="stylesheet" href="css/criptomonedas.css">
 
-    <title>CONTACTO | ELITE FOUND</title>
+    <title>COMPANY | ELITE FOUND</title>
     <script src="https://www.google.com/recaptcha/api.js?render=6LdDK4sqAAAAAC_ZMNbh9LH2V-BsW56Swj7QrDPz"></script>
 </head>
 <body>
+<style>
+    .contenedorCompany{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "textoCompany videoCompany" "imagenCompany videoCompany";
+    }
+
+    .textoCompany{
+        grid-area: textoCompany;
+    }
+
+    .imagenCompany{
+        grid-area: imagenCompany;
+    }
+
+    .videoCompany{
+        grid-area: videoCompany;
+    }
+</style>
 <header>
-<nav class="navbar navbar-expand-md navbar-dark">
+    <nav class="navbar navbar-expand-md navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="index.php">
                 <svg class="ps-1" id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 571.13 607.86">
@@ -278,7 +298,53 @@
         </div>
     </div>
 </div>
-<section class="seccion_oscura seccion_1">
+
+<section class="seccion_oscura seccion_1 imagenFondo" style="background-image: url(img/home/homeFondo.png);">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <h1>Elite Found</h1>
+                <hr>
+                <br>
+                <h3>Donde las oportunidades se convierten en éxito financiero</h3>
+                <br>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="seccion_clara">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <p>En <strong>Elite Found</strong>, transformamos oportunidades en crecimiento financiero sostenible. Con una sólida experiencia y un compromiso inquebrantable con nuestros clientes, ofrecemos un modelo único de generación de ingresos residuales y acceso a programas exclusivos de liderazgo. Únete a nuestra comunidad y lleva la gestión de capitales privados a nuevas alturas, mientras construyes un futuro financiero próspero y seguro. <strong>Elite Found es la oportunidad que cambiará tu vida para siempre.</strong></p>
+        </div>
+        <div class="col-md-6">
+            <video controls style="width: 100%;">
+                <source src="img/video/presentacionEliteFound.mp4" type="video/mp4">
+                    Tu navegador no soporta videos HTML5.
+            </video>
+        </div>
+    </div>
+</section>
+
+<section class="seccion_oscura">
+    <div class="container contenedorCompany">
+        <div class="textoCompany p-3">
+            <p>En <strong>Elite Found</strong>, ofrecemos una oportunidad única de crecimiento financiero a través de nuestros diversos planes diseñados para adaptarse a tus objetivos y nivel de inversión. Cada nivel de inversión te acerca más a la libertad financiera mientras construyes una organización sólida y escalable. En <strong>Elite Found</strong>, te acompañamos en cada paso para transformar tus aspiraciones en resultados tangibles. ¡Elige tu plan y comienza a cambiar tu vida hoy!</p>
+        </div>
+        <div class="imagenCompany p-3">
+            <img class="img-thumbnail" src="img/home/company.jpg" alt="">
+        </div>
+        <div class="videoCompany row align-items-center p-3">
+            <video class="col" controls style="width: 100%;">
+                <source src="img/video/company.mp4" type="video/mp4">
+                    Tu navegador no soporta videos HTML5.
+            </video>
+        </div>
+    </div>
+</section>
+
+<section class="seccion_clara">
     <div class="container mt-5">
         <div class="row">
             <div class="col">
@@ -358,12 +424,6 @@
         header.classList.toggle("bg-dark", window.scrollY > 0);
         ajustarClase();
     });
-
-    function mercados(){
-        $('html, body').animate({
-            scrollTop: $('#Mercados').offset().top
-        }, 1000);
-    }
 
     function ajustarClase() {
         const elemento = document.querySelector("nav");
