@@ -41,11 +41,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="depositar.php">Depósitos</a>
                     </li>
-                    <!--
                     <li class="nav-item">
                         <a class="nav-link active" href="retiros.php">Retiros</a>
                     </li>
-                    -->
                     <li class="nav-item">
                         <a class="nav-link" href="referidos.php">Referidos</a>
                     </li>
@@ -96,18 +94,28 @@
             <?php echo $variable1 ?>
             <div class="mb-3 text-center">
                 <label for="Billetera" class="form-label">Dirección Billetera</label>
-                <select id="Billetera" name="Billetera" class="form-select">
+                <select id="Billetera" name="Billetera" class="form-select" required>
                     <option value="" selected>Seleccione</option>
                     <?php echo $resultadoOption ?>
                 </select>
             </div>
             <div class="mb-3 text-center">
-                <label for="Planes" class="form-label">Planes</label>
-                <select id="Planes" name="Planes" class="form-select" onchange="cargarPlanes()">
-                    <option disabled selected>Seleccione</option>
+                <label for="ganancias" class="form-label">Retiro de ganancias <b id="verGanacia">(0)</b></label>
+                <input type="range" class="form-range" min="0" max="<?php echo $total_beneficios; ?>" id="ganancias" step="0.001" value="0" oninput="cargarRetiro()" required>
+            </div>
+            <div class="mb-3 text-center">
+                <label for="Planes" class="form-label">Retiro de capital</label>
+                <select id="Planes" name="Planes" class="form-select" onchange="cargarRetiro()">
+                    <option disabled selected value="">Seleccione</option>
                     <?php echo $selectPlanes ?>
                 </select>
             </div>
+            <div id="mensajeRetiros"></div>
+            <div class="mb-3 text-center">
+                <label for="totales" class="form-label">Total retiro</label>
+                <input type="number" class="form-control" id="totales" name="totales" readonly>
+            </div>
+
             <input type="hidden" name="Iduser" value="<?php echo $Iduser?>">
             <br>
             <button type="submit" class="btn btn-articule2" style="margin: auto; display: block">RETIRAR</button>
@@ -140,9 +148,7 @@
                             </tr>
                         </thead>
                         <tbody class="cuerpotabla">
-                            <tr>
-                                <?php echo $tablaRetiros; ?>
-                            </tr>
+                            <?php echo $tablaRetiros; ?>
                         </tbody>
                     </table>
                 </div>             

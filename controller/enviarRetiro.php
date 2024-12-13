@@ -1,18 +1,22 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $Planes = filter_input(INPUT_POST, 'Planes', FILTER_SANITIZE_STRING);
+    if (empty($Planes)) {
+        $Planes = null;
+    }
     $Billetera = filter_input(INPUT_POST, 'Billetera', FILTER_SANITIZE_STRING);
     $fechaActual = date("Y-m-d");
     $Iduser = filter_input(INPUT_POST, 'Iduser', FILTER_SANITIZE_STRING);
-    $proceder = !empty($Billetera) && !empty($Planes);
+    $totales = filter_input(INPUT_POST, 'totales', FILTER_SANITIZE_STRING);
+    $proceder = !empty($Billetera);
     $mensaje = "";
     
     if ($proceder) {
         require_once('../../../config-ext.php');
         if ($conn) {
-            $sql = "INSERT INTO retiros (id_user, id_depositos, id_billeteraUser, fecha) VALUES (?, ?, ?, ?)";
+            $sql = "INSERT INTO retiros (id_user, id_depositos, id_billeteraUser, fecha, cantidad) VALUES (?, ?, ?, ?, ?)";
             $stmt = mysqli_prepare($conn, $sql);
-            mysqli_stmt_bind_param($stmt, "ssss", $Iduser, $Planes, $Billetera, $fechaActual);
+            mysqli_stmt_bind_param($stmt, "sssss", $Iduser, $Planes, $Billetera, $fechaActual, $totales);
             mysqli_stmt_execute($stmt);
             
             if (mysqli_stmt_affected_rows($stmt) > 0) {
