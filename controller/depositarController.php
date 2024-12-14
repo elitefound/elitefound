@@ -87,7 +87,7 @@ if ($result->num_rows > 0) {
                     </div>
                     <br>
                     <button type="button" class="btn btn-articule" onclick="depositarModal('.$row['id_plan'].')">Abrir cuenta comercial</button>
-                    <p class="text-center">*Términos y condiciones</p>
+                    <p class="text-center"><a style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalGeneralTerms">*Términos y condiciones</a></p>
                 </div>
             </div>
         </article>

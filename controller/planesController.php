@@ -58,7 +58,7 @@ if ($result->num_rows > 0) {
                                 </div><table class="table table-borderless table-hover">
                                 '.$listado.'</table></div><br>
                                 <button type="button" class="btn btn-articule mb-3" data-bs-toggle="modal" data-bs-target="#Registro">Regístrate</button>
-                                <p class="text-center">*Términos y condiciones</p></div></div></article></div></div></section>';
+                                <p class="text-center"><a style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalGeneralTerms">*Términos y condiciones</a></p></div></div></article></div></div></section>';
 
     }
 }

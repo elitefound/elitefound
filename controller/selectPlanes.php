@@ -45,7 +45,7 @@ if ($result->num_rows > 0) {
                     </div>
                     <br>
                     <a href="planes.php#inicial" class="btn btn-articule mb-3">Saber más</a>
-                    <p class="text-center">*Términos y condiciones</p>
+                    <p class="text-center"><a style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalGeneralTerms">*Términos y condiciones</a></p>
                 </div>
             </div>
         </article>

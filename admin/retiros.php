@@ -31,7 +31,32 @@
     </style>
     <body>
         <?php echo $menu; ?>
-
+        <section class="p-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col table-responsive">
+                        <caption>
+                            <h2>Retiros</h2>
+                            <table class="table table-striped text-center">
+                                <thead>
+                                    <tr>
+                                        <th>Usuario</th>
+                                        <th>Deposito</th>
+                                        <th>Billetera</th>
+                                        <th>Fecha</th>
+                                        <th>Cantidad</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="registrosDepositos">
+                                    <?php echo $resultadosRetiros; ?>
+                                </tbody>
+                            </table>
+                        </caption>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <script src="../js/tools/cdn.jsdelivr.net_npm_bootstrap@5.3.0_dist_js_bootstrap.bundle.min.js"></script>
         <script src="../js/tools/ajax.googleapis.com_ajax_libs_jquery_1.6.2_jquery.min.js"></script>
