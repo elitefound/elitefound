@@ -290,13 +290,21 @@
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="6000">
-                <img src="img/home/Invierte con sabiduría.jpeg" class="d-block w-100" alt="...">
+                <img src="img/home/homeFondo.png" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-flex flex-column justify-content-center align-items-center" style="top: 50%; transform: translateY(-50%);">
                     <h1>Invierte con sabiduría</h1>
                     <h4>Haz que cada decisión financiera cuente hacia un futuro extraordinario.</h4>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="6000">
+                <img src="img/home/Invierte con sabiduría.jpeg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center" style="top: 50%; transform: translateY(-50%);">
+                    <h1>Cosecha tu futuro</h1>
+                    <h4>Equilibra tus recursos hoy para un mañana próspero.</h4>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="6000">
