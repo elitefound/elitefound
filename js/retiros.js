@@ -7,8 +7,9 @@ function cargarRetiro(){
     var capitalInt = 0;
     var total = 0;
 
-    if(ganancias <= 10 && capital === ""){
-        mensaje += '<p><abbr title="HyperText Markup Language" class="initialism">no te alcanza, debes tener mas de $10 USD por costo de retiro</abbr></p>';
+    if(ganancias <= 60 && capital === ""){
+        mensaje += '<p><abbr title="HyperText Markup Language" class="initialism">Toda transacción debe ser mayor de $50 USD</abbr></p>';
+        mensaje += '<p><abbr title="HyperText Markup Language" class="initialism">Toda transacción tiene un costo de $10 USD</abbr></p>';
         total = 0;
     }else{
         mensaje += '<p><abbr title="HyperText Markup Language" class="initialism">Toda transacción tiene un costo de $10 USD</abbr></p>';

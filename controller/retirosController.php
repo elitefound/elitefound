@@ -89,7 +89,7 @@ if ($result->num_rows > 0) {
     }
 }
 
-$sql2 = "SELECT r.fecha, r.cantidad, r.estado, p.plan
+$sql2 = "SELECT r.fecha, r.cantidad, r.cantidadTotal, r.estado, p.plan
         FROM retiros AS r
         LEFT JOIN depositos AS d ON r.id_depositos = d.id_depositos
         LEFT JOIN planes AS p ON d.id_plan = p.id_plan
@@ -107,11 +107,11 @@ if ($result2->num_rows > 0) {
         if($row2["estado"] == "1"){
             $tablaRetiros .= "<tr>";
             $tablaRetiros .= "<td>" . $row2["fecha"] . "</td>";
-            $tablaRetiros .= "<td>" . $row2["cantidad"] . "</td>";
+            $tablaRetiros .= "<td>" . $row2["cantidadTotal"] . "</td>";
             $tablaRetiros .= "<td>" . $row2["plan"] . "</td>";
             $tablaRetiros .= "</tr>";
         }
-        $totalRetiros = $totalRetiros + $row2["cantidad"] + 10;
+        $totalRetiros = $totalRetiros + $row2["cantidad"];
     }
 
 }

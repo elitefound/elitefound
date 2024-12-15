@@ -3,7 +3,7 @@
 
     $totalValor = 0;
 
-    $sql_1 = "SELECT SUM(cantidad) AS total_cantidad FROM depositos WHERE id_user = ? AND estado = 1";
+    $sql_1 = "SELECT SUM(cantidad) AS total_cantidad, COUNT(*) AS total_registros FROM depositos WHERE id_user = ? AND estado = 1";
     $stmt_1 = $conn->prepare($sql_1);
     $stmt_1->bind_param("i", $id_user);
     $stmt_1->execute();
@@ -15,6 +15,7 @@
         $total_cantidad = !empty($row['total_cantidad']) ? $row['total_cantidad'] : 0;
         $totalValor = $totalValor + $total_cantidad;
         $total_cantidad = number_format($total_cantidad, 2, '.', ',');
+        $total_registros = !empty($row['total_registros']) ? $row['total_registros'] : 0;
     }
 
     $total_intereses = 0;
@@ -44,6 +45,7 @@
 
     $total_referidos = !empty($row['totalReferidos']) ? $row['totalReferidos'] : 0;
     $totalValor = $totalValor + $total_referidos;
+    
     $total_referidos = number_format($total_referidos, 2, '.', ',');
 
     $total_liderazgo = 0;
@@ -58,6 +60,7 @@
 
     $total_liderazgo = !empty($row['totalliderazgo']) ? $row['totalliderazgo'] : 0;
     $totalValor = $totalValor + $total_liderazgo;
+    $totalValor = number_format($totalValor, 2, '.', ',');
     $total_liderazgo = number_format($total_liderazgo, 2, '.', ',');
 
     $rangoActual_5 = 0;
@@ -77,18 +80,45 @@
 
     if($rangoActual_5 == 0 || $rangoActual_5 == 1){
         $rangoActual = '<img src="img/home/planComercial.png" class="svgCard">';
-        $nombreRAngo = "";
+        $nombreRAngo = "Inicial";
     }else{
         $rangoActual = '<img src="img/rango/'.$rangoActual_5.'.png" class="svgCard" alt="'.$rangoActual_5.'">';
-        $nombreRAngo = $row_5['nombre'].": ";
+        $nombreRAngo = $row_5['nombre'];
     }
+
+    $total_retiro = 0;
+    $sql_6 = "SELECT SUM(cantidad) AS totalBeneficios
+                FROM retiros
+                WHERE id_user = ? AND estado = 1";
+    $stmt_6 = $conn->prepare($sql_6);
+    $stmt_6->bind_param("i", $id_user);
+    $stmt_6->execute();
+    $result_6 = $stmt_6->get_result();
+    $row = $result_6->fetch_assoc();
+    $total_retiro = !empty($row['totalBeneficios']) ? $row['totalBeneficios'] : 0;
+    $total_retiro = number_format($total_retiro, 2, '.', ',');
 
     $equipo = equipo($id_user, $conn);
     $equipo = substr($equipo, 0, -1);
     $volumen = volumen($equipo, $conn);
     $volumen = number_format($volumen, 2, '.', ',');
 
-    $totalValor = number_format($totalValor, 2, '.', ',');
+    $total_depositos = 0;
+    $sql_7 = "SELECT SUM(d.cantidad) AS cantidad
+        FROM retiros r
+        JOIN depositos d ON r.id_depositos = d.id_depositos
+        WHERE r.id_user = ? AND r.estado = 1";
+    $stmt_7 = $conn->prepare($sql_7);
+
+    $stmt_7->bind_param("i", $id_user);
+    $stmt_7->execute();
+    $result_7 = $stmt_7->get_result();
+
+    if ($result_7) {
+        $row = $result_7->fetch_assoc();
+        $total_depositos = $row['cantidad'] ?? 0;
+    }
+
 
     function equipo($id_user, $conn) {
         $Registro = "";

@@ -8,15 +8,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fechaActual = date("Y-m-d");
     $Iduser = filter_input(INPUT_POST, 'Iduser', FILTER_SANITIZE_STRING);
     $totales = filter_input(INPUT_POST, 'totales', FILTER_SANITIZE_STRING);
+    $ganancias = filter_input(INPUT_POST, 'ganancias', FILTER_SANITIZE_STRING);
     $proceder = !empty($Billetera);
     $mensaje = "";
+
+    if($totales <= 50){
+        $proceder = false;
+    }
     
     if ($proceder) {
         require_once('../../../config-ext.php');
         if ($conn) {
-            $sql = "INSERT INTO retiros (id_user, id_depositos, id_billeteraUser, fecha, cantidad) VALUES (?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO retiros (id_user, id_depositos, id_billeteraUser, fecha, cantidad, cantidadTotal) VALUES (?, ?, ?, ?, ?, ?)";
             $stmt = mysqli_prepare($conn, $sql);
-            mysqli_stmt_bind_param($stmt, "sssss", $Iduser, $Planes, $Billetera, $fechaActual, $totales);
+            mysqli_stmt_bind_param($stmt, "ssssss", $Iduser, $Planes, $Billetera, $fechaActual, $ganancias, $totales);
             mysqli_stmt_execute($stmt);
             
             if (mysqli_stmt_affected_rows($stmt) > 0) {
@@ -36,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header("Location: ../retiros.php?mensaje=".$mensaje);
         }
     } else {
-        $mensaje = "Datos vacíos";
+        $mensaje .= "Datos errados";
         header("Location: ../retiros.php?mensaje=".$mensaje);
     }
 }

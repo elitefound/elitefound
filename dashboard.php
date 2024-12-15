@@ -89,7 +89,7 @@
 </header>
 <!-- fin del menú -->
 <section class="seccion_oscura">
-    <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="row row-cols-2 row-cols-md-3 g-4">
         <div class="col">
             <div class="container">
                 <div class="card" data-aos="zoom-in-right">
@@ -106,16 +106,15 @@
                         </svg>
                     <br>
                     <div class="card-body">
-                        <div class="inputCard"><p class="card-text"><strong>Total depósitos: </strong>$US <?php echo $total_cantidad; ?><br><strong>Total: </strong>$US <?php echo $totalValor; ?></p></div>
+                        <div class="inputCard"><p class="card-text"><strong>Total depósitos: </strong>$US <?php echo $total_cantidad; ?><br><strong>Depósitos: </strong><?php echo $total_registros ?></p></div>
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="col">
             <div class="container">
                 <div class="card" data-aos="zoom-in-left">
-                    <h3 class="card-title">Interés total ganado</h3>
+                    <h3 class="card-title">Intereses</h3>
                     <br>
                     <svg class="svgCard" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.135 94.24">
                     <g id="Grupo_19" data-name="Grupo 19" transform="translate(-1371.961 -337.76)">
@@ -127,12 +126,11 @@
 
                     <br>
                     <div class="card-body">
-                        <div class="inputCard"><p class="card-text"><strong>Total interés:</strong> $US <?php echo $total_intereses?><br><br></p></div>
+                        <div class="inputCard"><p class="card-text"><strong>Total interés:</strong> $US <?php echo $total_intereses?><br><strong>Total beneficios: </strong>$US <?php echo $totalValor; ?></p></div>
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="col">
             <div class="container">
                 <div class="card" data-aos="zoom-in-right">
@@ -141,58 +139,52 @@
                     <img class="svgCard" src="img/home/Grupo 21.png" alt="">
                     <br>
                     <div class="card-body">
-                        <div class="inputCard"><p class="card-text"><strong>Bono de red: </strong>$US <?php echo $total_referidos?><br><br></p></div>
+                        <div class="inputCard"><p class="card-text"><strong>Bono de red: </strong>$US <?php echo $total_referidos?><br><strong>Volumen de equipo: </strong>$US  <?php echo $volumen?></p></div>
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="col">
             <div class="container">
                 <div class="card" data-aos="zoom-in-left">
-                    <h3 class="card-title">Bonos liderazgo</h3>
+                    <h3 class="card-title">Bonos</h3>
                     <br>
                         <?php echo $rangoActual?>
                     <br>          
                     <div class="card-body">
-                        <div class="inputCard"><p class="card-text"><strong><?php echo $nombreRAngo ?> </strong>$US <?php echo $total_liderazgo?><br><strong>Volumen de equipo: </strong>$US  <?php echo $volumen?></p></div>
+                        <div class="inputCard"><p class="card-text"><strong>Bonos: </strong>$US <?php echo $total_liderazgo?><br><strong>Rango:</strong> <?php echo $nombreRAngo ?></p></div>
                     </div>
                 </div>
             </div>
         </div>
-        <!--
         <div class="col">
             <div class="container">
                 <div class="card" data-aos="zoom-in-right">
-                    <h3 class="card-title">Herramientas</h3>
+                    <h3 class="card-title">Retiros</h3>
                     <br>
                     <svg class="svgCard" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.002 48.913">
                         <path id="Trazado_20" data-name="Trazado 20" d="M955.919,364H966.67c11.479,0,19.974,11.057,16.6,22.028q-.161.522-.348,1.059s10.166-4.384,6-24.174c-4-19-33-14.565-33-14.565V338.174l-21,18.739,21,18.044Z" transform="translate(-934.919 -338.174)" fill="#00183b"/>
                     </svg>
                     <br>
                     <div class="card-body">
-                        <div class="inputCard"><p class="card-text">0.00<br><br></p></div>
+                        <div class="inputCard"><p class="card-text"><strong>Beneficios: </strong>$US <?php echo $total_retiro?><br><strong>Depósitos: </strong>$US <?php echo $total_depositos?></p></div>
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="col">
             <div class="container">
                 <div class="card" data-aos="zoom-in-left">
-                    <h3 class="card-title">Simulador</h3>
+                    <h3 class="card-title">Herramientas</h3>
                     <br>
-                    <svg class="svgCard" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.002 48.913">
-                        <path id="Trazado_20" data-name="Trazado 20" d="M955.919,364H966.67c11.479,0,19.974,11.057,16.6,22.028q-.161.522-.348,1.059s10.166-4.384,6-24.174c-4-19-33-14.565-33-14.565V338.174l-21,18.739,21,18.044Z" transform="translate(-934.919 -338.174)" fill="#00183b"/>
-                    </svg>
+                    <img class="svgCard" src="img/home/planComercial.png" alt="">
                     <br>
                     <div class="card-body">
-                        <div class="inputCard"><p class="card-text">0.00<br><br></p></div>
+                        <div class="inputCard"><p class="card-text"><br><br></p></div>
                     </div>
                 </div>
             </div>
         </div>
--->
     </div>
 </section>
 

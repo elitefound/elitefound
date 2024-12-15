@@ -102,7 +102,7 @@
             </div>
             <div class="mb-3 text-center">
                 <label for="ganancias" class="form-label">Retiro de ganancias <b id="verGanacia">(0)</b></label>
-                <input type="range" class="form-range" min="0" max="<?php echo $total_beneficios; ?>" id="ganancias" step="0.001" value="0" oninput="cargarRetiro()" required>
+                <input name="ganancias" type="range" class="form-range" min="0" max="<?php echo $total_beneficios; ?>" id="ganancias" step="0.001" value="0" oninput="cargarRetiro()" required>
             </div>
             <div class="mb-3 text-center">
                 <label for="Planes" class="form-label">Retiro de capital</label>

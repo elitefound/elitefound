@@ -35,8 +35,7 @@ $footer = '<footer class="seccion_oscura">
     </div>
   </div>
   <div class="modal-body">
-    <iframe src="terms and conditions/GENERAL TERMS AND CONDITIONS/index.html" 
-      style="width: 100%; height: 65vw; border: none;">
+    <iframe class="pdfVisual" src="terms and conditions/GENERAL TERMS AND CONDITIONS/index.html">
     </iframe>
   </div>
   <div class="modal-footer">
@@ -57,8 +56,7 @@ $footer = '<footer class="seccion_oscura">
     </div>
   </div>
   <div class="modal-body">
-    <iframe src="terms and conditions/SECURITY AND PRIVACY/index.html" 
-      style="width: 100%; height: 65vw; border: none;">
+    <iframe class="pdfVisual" src="terms and conditions/SECURITY AND PRIVACY/index.html">
     </iframe>
   </div>
   <div class="modal-footer">
@@ -79,8 +77,7 @@ $footer = '<footer class="seccion_oscura">
     </div>
   </div>
   <div class="modal-body">
-    <iframe src="terms and conditions/SPECIFIC TERMS OF THE INVESTMENT FUND/index.html" 
-      style="width: 100%; height: 65vw; border: none;">
+    <iframe class="pdfVisual" src="terms and conditions/SPECIFIC TERMS OF THE INVESTMENT FUND/index.html">
     </iframe>
   </div>
   <div class="modal-footer">
