@@ -24,7 +24,7 @@
 <body>
 <!-- inicio del menú -->
 <header>
-    <nav class="navbar navbar-expand-md">
+    <nav class="navbar navbar-expand-md navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="index.php"><svg class="ps-1" id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 571.13 607.86">
                     <path d="M560.72,491.08c-10.72,11.1-20.93,22.74-32.24,33.2-44.46,41.09-96.26,68.19-156.14,78.58-81.01,14.06-156.33-1.5-224.3-47.57C69.32,501.94,22.82,426.92,5.87,333.85-7.37,261.09,1.86,190.79,32.81,123.46c.69-1.49,1.44-2.96,2.88-4.21-1.07,3.97-2.22,7.91-3.19,11.91-29.63,122.32-4.07,231.48,80.73,324.94,51.37,56.61,116.23,90.62,192.17,101.66,92.73,13.49,176.33-9.28,250.83-65.84,1.02-.77,2.09-1.48,3.13-2.21,.45,.46,.9,.91,1.35,1.37Z"/>
@@ -86,8 +86,8 @@
         </div>
     </nav>
 </header>
-<section class="seccion_clara">
-    <div class="container">
+<section class="seccion_oscura primerSeccion pt-5">
+    <div class="container mt-5">
         <div class="row">
             <div class="col">
                 <?php echo $variable1; ?>
@@ -105,9 +105,11 @@
                 <h6>Tu oportunidad está a solo un clic de distancia.</h6>
             </div>
         </div>
-        <div class="articulos">
-            <?php  echo empty($planes) || $planes == 0 ? "" : $planes ?>
-        </div>
+    </div>
+</section>
+<section class="seccion_clara">
+    <div class="articulos">
+        <?php  echo empty($planes) || $planes == 0 ? "" : $planes ?>
     </div>
 </section>
 <div class="modal fade" tabindex="-1" id="depositarModal">
@@ -117,96 +119,105 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
         <div class="modal-body seccion_oscura">
-            <div class="">
-                <div class="cont-pest">
-                    <form action="controller/depositarEnviar.php" method="post" enctype="multipart/form-data">
-                        <ul class="select_main">
-                            <li>
-                                <input type="radio" name="select_main" id="select_1" class="main_select_s" checked>
-                                <div class="select_content">
-                                    <!---->
-                                    <div class="formDepositar seccion_clara">
-                                        <h3>
-                                            INVERSIÓN
-                                        </h3>
-                                        <br>
-                                        <div class="mb-3 text-center">
-                                            <label for="PlanInversion" class="form-label">Plan de Inversión</label>
-                                            <select id="PlanInversion" name="PlanInversion" class="form-select" onchange="cargarInversion()">
-                                                <option value="" selected disabled>Seleccione</option>
-                                                <?php echo $selectPlanes; ?>
-                                            </select>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <?php echo $mensajeBilletera;?>
+            <form action="controller/depositarEnviar.php" method="post" enctype="multipart/form-data">
+                <div class="formDepositar seccion_clara">
+                    <h3>
+                        INVERSIÓN
+                    </h3>
+                    <br>
+                    <div class="mb-3 text-center">
+                        <label for="PlanInversion" class="form-label">Plan de Inversión</label>
+                            <select id="PlanInversion" name="PlanInversion" class="form-select" onchange="cargarInversion()">
+                                <option value="" selected disabled>Seleccione</option>
+                                <?php echo $selectPlanes; ?>
+                            </select>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <?php echo $mensajeBilletera;?>
+                        </div>
+                    </div>
+                    <div class="mb-3 text-center">
+                        <label for="BilleteraInversion" class="form-label">Selección billetera</label>
+                        <select id="BilleteraInversion" name="BilleteraInversion" class="form-select">
+                            <option value="" selected>Seleccione</option>
+                            <?php echo $resultadoOption; ?>
+                        </select>
+                    </div>
+                    <div class="mb-3 text-center">
+                        <label for="CantidadInversion" class="form-label">Cantidad</label>
+                        <select id="CantidadInversion" name="CantidadInversion" class="form-select"></select>
+                    </div>
+                    <h3>
+                        PARA REALIZAR SU DEPÓSITO:
+                    </h3>
+                    <p>Envíe su depósito siguiendo el paso a paso.</p>
+                    <table class="table">
+                        <tr>
+                            <th>1.</th>
+                            <td>
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item">
+                                        <label id="nav-link_1" class="nav-link active" aria-current="page" for="select_1" onclick="verActivo(1)">Telther USDT TRC20</label>
+                                    </li>
+                                    <!--
+                                    <li class="nav-item">
+                                        <label id="nav-link_2" class="nav-link" aria-current="page" for="select_2" onclick="verActivo(2)">Bitcoin</label>
+                                    </li>
+                                    -->
+                                </ul>
+                                <ul class="select_main">
+                                    <li>
+                                        <input type="radio" name="select_main" id="select_1" class="main_select_s" checked>
+                                        <div class="select_content">
+                                            <br>
+                                            <p>Copie la dirección pública</p>
+                                            <div class="mb-3 input-group text-center">
+                                                <input id="USDTCopiar" type="text" class="form-control" value="TEWQUwj8f1v7mgtDG85HZ5Xsdr62EUbZw8" readonly>
+                                                <button type="button" class="btn btn-info" onclick="copiar('USDTCopiar')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="row justify-content-center">
+                                                <div class="col-12 col-md-4"><img class="img-thumbnail rounded mx-auto d-block w-100" src="img/QRHASH.jpeg" alt="QR"></div>
                                             </div>
                                         </div>
-                                        <div class="mb-3 text-center">
-                                            <label for="BilleteraInversion" class="form-label">Selección billetera</label>
-                                            <select id="BilleteraInversion" name="BilleteraInversion" class="form-select">
-                                                <option value="" selected>Seleccione</option>
-                                                <?php echo $resultadoOption; ?>
-                                            </select>
-                                        </div>
-
-                                        <div class="mb-3 text-center">
-                                            <label for="CantidadInversion" class="form-label">Cantidad</label>
-                                            <select id="CantidadInversion" name="CantidadInversion" class="form-select"></select>
-                                        </div>
-                                        
-                                    </div>
-                                    <label class="btnExtra text-center" for="select_2">CONFIRMAR</label>
-                                    
-                                </div>
-                            </li>
-                            <li>
-                                <input type="radio" name="select_main" id="select_2" class="main_select_s">
-                                <div class="select_content formDepositar seccion_clara">
-                                    <h3>
-                                        PARA REALIZAR SU DEPÓSITO:
-                                    </h3>
-                                    <p>Envíe su depósito siguiendo el paso a paso.</p>
-                                    <ol>
-                                        <li>
-                                            Copie la dirección pública para recibir USDT:
-                                            <br>TEWQUwj8f1v7mgtDG85HZ5Xsdr62EUbZw8
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="select_main" id="select_2" class="main_select_s">
+                                        <div class="select_content">
                                             <br>
-                                            <br><br><a href="https://link.trustwallet.com/send?coin=195&address=TEWQUwj8f1v7mgtDG85HZ5Xsdr62EUbZw8&token_id=TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t" target="_blank"><img style="width: 60%;" src="img/QRHASH.jpeg" alt="QR"></a>
-                                        </li>
-                                        <li>
-                                            Ahora vaya a su billetera externa, pegue la dirección y digite cuidadosamente la cantidad exacta a invertir. 
-                                        </li>
-                                        <li>
-                                            Una vez se haya realizado de manera exitosa la transacción, Ingrese el hash de su transacción a continuación.
-                                        </li>
-                                        <li>
-                                            Recuerde completar el  pago lo antes posible.
-                                        </li>
-                                    </ol>
-                                    <br>
-                                    <h3>Hash de transacción</h3>
-                                    <input type="hidden" name="Iduser" value="<?php echo $Iduser?>">
-                                    <div class="mb-3">
-                                        <input class="form-control" type="text" id="formFile" aria-describedby="fileHelp" name="imagen">
-                                        <div id="fileHelp" class="form-text">Ingrese el hash de su transacción</div>
-                                    </div>
-                                    <br>
-                                    <button type="submit" class="btn btn-articule" style="margin: auto; display: block">ENVIAR</button>
-                                    <label class="text-center" for="select_1">
-                                        <i>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
-                                                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
-                                            </svg>
-                                            volver
-                                        </i>
-                                    </label>
-                                </div>
-                            </li>
-                        </ul>
-                    </form>
+                                            <p>Copie la dirección pública</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>2.</th>
+                            <td>Ahora vaya a su billetera externa, pegue la dirección y digite cuidadosamente la cantidad exacta a invertir.</td>
+                        </tr>
+                        <tr>
+                            <th>3.</th>
+                            <td>Una vez se haya realizado de manera exitosa la transacción, Ingrese el hash de su transacción a continuación.</td>
+                        </tr>
+                        <tr>
+                            <th>4.</th>
+                            <td>Recuerde completar el  pago lo antes posible.</td>
+                        </tr>
+                    </table>
+                    <br>
+                    <h3>Hash de transacción</h3>
+                    <input type="hidden" name="Iduser" value="<?php echo $Iduser?>">
+                    <div class="mb-3">
+                        <input class="form-control" type="text" id="formFile" aria-describedby="fileHelp" name="imagen">
+                        <div id="fileHelp" class="form-text">Ingrese el hash de su transacción</div>
+                    </div>
                 </div>
-            </div>
+                <button type="submit" class="btnExtra text-center">CONFIRMAR</button>
+            </form>
         </div>
     </div>
   </div>
@@ -272,23 +283,31 @@
     $(document).ready(function() {
         AOS.init();
         ajustarClase();
+        fetchCryptoPrices();
     });
 
     window.addEventListener("scroll", function () {
         var header = document.querySelector("nav");
         header.classList.toggle("bg-dark", window.scrollY > 0);
-        header.classList.toggle("navbar-dark", window.scrollY > 0);
+        ajustarClase();
     });
 
     function ajustarClase() {
         const elemento = document.querySelector("nav");
         if (window.innerWidth <= 768) {
             elemento.classList.add('bg-dark');
-            elemento.classList.add('navbar-dark');
-        }else{
-            elemento.classList.remove('bg-dark');
-            elemento.classList.remove('navbar-dark');
         }
+    }
+
+    function copiar(input){
+        var texto = $('#'+input);
+        texto.select();
+        document.execCommand('copy');
+    }
+
+    function verActivo(selector){
+        $('.nav-link').removeClass('active');
+        $('#nav-link_'+selector).addClass('active');
     }
 
     window.addEventListener('resize', ajustarClase);

@@ -82,8 +82,8 @@
         </div>
     </nav>
 </header>
-<section class="seccion_clara">
-    <div class="container">
+<section class="seccion_clara pt-5">
+    <div class="container mt-5">
         <div class="row">
             <div class="col">
                 <h1>REFERIDOS</h1>
@@ -163,12 +163,14 @@
     $(document).ready(function() {
         AOS.init();
         ajustarClase();
+        fetchCryptoPrices();
     });
 
     window.addEventListener("scroll", function () {
         var header = document.querySelector("nav");
         header.classList.toggle("bg-dark", window.scrollY > 0);
         header.classList.toggle("navbar-dark", window.scrollY > 0);
+        ajustarClase();
     });
 
     function ajustarClase() {
@@ -176,9 +178,6 @@
         if (window.innerWidth <= 768) {
             elemento.classList.add('bg-dark');
             elemento.classList.add('navbar-dark');
-        }else{
-            elemento.classList.remove('bg-dark');
-            elemento.classList.remove('navbar-dark');
         }
     }
 

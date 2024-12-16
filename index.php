@@ -330,8 +330,8 @@
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
         </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -353,7 +353,7 @@
                 <div class="slideHome">
                     <div class="izquierda">
                         <div class="texto_1 centrarElementos">
-                            <div class="texto_1_1 my-3">
+                            <div class="texto_1_1 my-1">
                                 <h2 style="text-align: left;">
                                     MATERIAS PRIMAS&nbsp;&nbsp;
                                     <svg xmlns="http://www.w3.org/2000/svg" width="46.508" height="27.916" viewBox="0 0 46.508 27.916">
@@ -369,23 +369,23 @@
                             </div>
                         </div>
                     </div>
-                    <div class="derecha my-3">
+                    <div class="derecha my-1">
                         <div class="videoSlide centrarElementos">
-                            <img src="img/home/Meterias primas.gif " alt="">
+                            <img src="img/home/Materias primas.gif " alt="">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="slideHome">
-                    <div class="izquierda my-3">
+                    <div class="izquierda my-1">
                         <div class="videoSlide centrarElementos">
                             <img src="img/home/ETF'S.gif" alt="">
                         </div>
                     </div>
                     <div class="derecha">
                         <div class="texto_1 centrarElementos">
-                            <div class="texto_1_1 my-3">
+                            <div class="texto_1_1 my-1">
                                 <h2 style="text-align: right;"> 
                                     <svg xmlns="http://www.w3.org/2000/svg" width="33.5" height="37.5" viewBox="0 0 33.5 37.5">
                                         <g id="Grupo_1228" data-name="Grupo 1228" transform="translate(-1672.5 -3712.5)">
@@ -409,7 +409,7 @@
                 <div class="slideHome">
                     <div class="izquierda">
                         <div class="texto_1 centrarElementos">
-                            <div class="texto_1_1 my-3">
+                            <div class="texto_1_1 my-1">
                                 <h2 style="text-align: left;">
                                     ÍNDICES BURSÁTILES&nbsp;&nbsp;
                                     <svg xmlns="http://www.w3.org/2000/svg" width="44.109" height="49.45" viewBox="0 0 44.109 49.45">
@@ -428,9 +428,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="derecha my-3">
+                    <div class="derecha my-1">
                         <div class="videoSlide centrarElementos">
-                            <img src="img/home/Intro.gif" alt="">
+                            <img src="img/home/Indices Bursatiles.gif" alt="">
                         </div>
                     </div>
                 </div>

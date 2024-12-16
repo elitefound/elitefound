@@ -84,9 +84,9 @@
     </nav>
 </header>
 <!-- fin del menú --> 
-<section class="seccion_clara">
+<section class="seccion_clara pt-5">
 
-    <div class="retirosForm seccion_oscura">
+    <div class="retirosForm seccion_oscura mt-5">
         <h3>
             SOLICITUD RETIRO
         </h3>
@@ -167,22 +167,21 @@
     $(document).ready(function() {
         AOS.init();
         ajustarClase();
+        fetchCryptoPrices();
     });
 
     window.addEventListener("scroll", function () {
         var header = document.querySelector("nav");
         header.classList.toggle("bg-dark", window.scrollY > 0);
         header.classList.toggle("navbar-dark", window.scrollY > 0);
+        ajustarClase();
     });
-
+    
     function ajustarClase() {
         const elemento = document.querySelector("nav");
         if (window.innerWidth <= 768) {
             elemento.classList.add('bg-dark');
             elemento.classList.add('navbar-dark');
-        }else{
-            elemento.classList.remove('bg-dark');
-            elemento.classList.remove('navbar-dark');
         }
     }
 

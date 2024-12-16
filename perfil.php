@@ -79,8 +79,8 @@
     </nav>
 </header>
 <!-- fin del menú -->
-<section class="seccion_oscura">
-    <div class="container">
+<section class="seccion_oscura pt-5">
+    <div class="container mt-5">
         <div class="cont-pest">
             <ul class="select_main">
                 <li>
@@ -280,12 +280,24 @@
 <script>
     $(document).ready(function() {
         AOS.init();
+        ajustarClase();
+        fetchCryptoPrices();
     });
 
     window.addEventListener("scroll", function () {
         var header = document.querySelector("nav");
         header.classList.toggle("bg-dark", window.scrollY > 0);
+        ajustarClase();
     });
+
+    function ajustarClase() {
+        const elemento = document.querySelector("nav");
+        if (window.innerWidth <= 768) {
+            elemento.classList.add('bg-dark');
+        }else{
+
+        }
+    }
 
     $(document).ready(function() {
             $('#botonCopiar').click(function() {

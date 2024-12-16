@@ -96,7 +96,6 @@ section{
 .articulos{
     width: 95%;
     margin: auto;
-    padding-top: 5%;
     padding-bottom: 5%;
     display: flex;
     justify-content: center;
@@ -382,5 +381,13 @@ footer{
 
     .pdfVisual{
         height: 90vh;
+    }
+
+    .retirosForm {
+        width: 90%;
+    }
+
+    label{
+        font-size: 15px;
     }
 }
