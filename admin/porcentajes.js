@@ -1,37 +1,81 @@
-function agregarPorcentaje(id){
-    plan = $("#plan_"+id).val();
-    porcentaje = $("#porcentaje_"+id).val();
-    fecha = $("#fecha_"+id).val();
+function agregarPorcentaje(id) {
+  const plan = $("#plan_" + id).val();
+  const porcentaje = $("#porcentaje_" + id).val();
+  const fecha = $("#fecha_" + id).val();
+  
+if(porcentaje == 0 || porcentaje == null){
+  return;
+}
 
     Swal.fire({
         title: "¿Desea agregar el porcentaje de ganancia?",
-        text: "Plan: "+plan+" Porcentaje: %"+porcentaje+" Fecha: "+fecha,
+        text: "Plan: " + plan + " Porcentaje: %" + porcentaje + " Fecha: " + fecha,
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
         confirmButtonText: "Si, deseo agregar"
-      }).then((result) => {
+    }).then((result) => {
         if (result.isConfirmed) {
             $.ajax({
                 url: 'rentavariable.php',
                 type: 'POST',
-                data:{
+                data: {
                     id: id,
                     porcentaje: porcentaje,
                     fecha: fecha
                 },
-                success: function(data){
-                    alert (data);
+                success: function(data) {
+                    Swal.fire({
+                        title: "Proceso completo",
+                        text: data,
+                        icon: "success"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            location.reload();
+                        }
+                    });
+                },
+                error: function() {
+                    Swal.fire({
+                        title: "Error",
+                        text: "Ocurrió un error al procesar la solicitud.",
+                        icon: "error"
+                    });
                 }
             });
-
-
-          Swal.fire({
-            title: "Proceso completo",
-            text: "porcentaje agregado exitosamente",
-            icon: "success"
-          });
         }
+    });
+}
+
+function eliminarPorcentaje(id){
+  Swal.fire({
+    title: "Eliminar",
+    text: "¿Desea eliminar el porcentaje de ganancia?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Si, deseo eliminarlo"
+  }).then((result) => {
+    if (result.isConfirmed) {
+        $.ajax({
+            url: 'eliminarporcentajes.php',
+            type: 'POST',
+            data:{
+                id: id
+            },
+            success: function(data){
+              location.reload();
+            }
+        });
+
+
+      Swal.fire({
+        title: "Proceso completo",
+        text: "porcentajes eliminados exitosamente",
+        icon: "success"
       });
+    }
+  });
 }
