@@ -1,6 +1,7 @@
 <?php
     include(dirname(__FILE__).'/controller/referidosController.php');
     include(dirname(__FILE__).'/controller/footer.php');
+    include(dirname(__FILE__).'/controller/red.php');
 ?>
 
 <!DOCTYPE html>
@@ -153,12 +154,26 @@
         </div>
     </div>
 </section>
+<section class="seccion_clara">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>RED</h1>
+                <hr>
+            </div>
+        </div>
+        <div id="miRed">
+            <?php echo $red; ?>
+        </div>
+    </div>
+</section>
 <?php echo $footer ?>
 
 <script src="js/tools/cdn.jsdelivr.net_npm_bootstrap@5.3.0_dist_js_bootstrap.bundle.min.js"></script>
 <script src="js/tools/ajax.googleapis.com_ajax_libs_jquery_1.6.2_jquery.min.js"></script>
 <script src="js/tools/aos.js"></script>
 <script src="js/criptomonedas.js"></script>
+<script src="js/Redreferidos.js"></script>
 <script>
     $(document).ready(function() {
         AOS.init();

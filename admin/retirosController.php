@@ -3,7 +3,7 @@
     require_once("../../../config-ext.php");
     include("../controller/encoded.php");
 
-    $sql = "SELECT u.username, d.id_depositos, d.archivo, d.cantidad AS deposito, d.fechafinal, b.link, r.fecha, r.estado, r.cantidad AS solicitado
+    $sql = "SELECT r.id_retiros, u.username, d.id_depositos, d.archivo, d.cantidad AS deposito, d.fechafinal, b.link, r.fecha, r.estado, r.cantidad AS solicitado
     FROM retiros r
     JOIN user u ON r.id_user = u.id_user
     LEFT JOIN depositos d ON r.id_depositos = d.id_depositos
@@ -25,8 +25,10 @@
             $fecha = $row["fecha"];
             $solicitado = $row["solicitado"];
 
+            $enviarRetiro = $row["id_retiros"].";".$deposito.";".$fechafinal.";".$solicitado.";".$id_depositos;
+
             if($row["estado"] == "0"){
-                $estado = "<td class=\"table-danger\"><button type=\"button\" class=\"btn btn-danger\">Aceptar</button></td>";
+                $estado = "<td class=\"table-danger\"><button type=\"button\" class=\"btn btn-danger\" onclick=\"retiro(".$enviarRetiro.")\">Aceptar</button></td>";
             } else if ($row["estado"] == "1"){
                 $estado = "<td class=\"table-secondary\">Retirado</td>";
             }else{
