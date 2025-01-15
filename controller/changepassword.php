@@ -24,6 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($stmt->affected_rows > 0) {
             enviaContraseña($contraseña, $EmailDecoded, $EmailUser, $emailPass);
         }
+    }else{
+        header("Location: ../index.php");
     }
 }
 
