@@ -44,7 +44,8 @@
                                         <th>Deposito</th>
                                         <th>Billetera</th>
                                         <th>Fecha</th>
-                                        <th>Cantidad</th>
+                                        <th>Ganancias</th>
+                                        <th>Total</th>
                                         <th>Estado</th>
                                     </tr>
                                 </thead>
@@ -60,5 +61,6 @@
 
         <script src="../js/tools/cdn.jsdelivr.net_npm_bootstrap@5.3.0_dist_js_bootstrap.bundle.min.js"></script>
         <script src="../js/tools/ajax.googleapis.com_ajax_libs_jquery_1.6.2_jquery.min.js"></script>
+        <script src="retiros.js"></script>
     </body>
 </html>
