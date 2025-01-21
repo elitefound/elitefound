@@ -160,11 +160,11 @@
                                     <li class="nav-item">
                                         <label id="nav-link_1" class="nav-link active" aria-current="page" for="select_1" onclick="verActivo(1)">Telther USDT TRC20</label>
                                     </li>
-                                    <!--
+                                    
                                     <li class="nav-item">
                                         <label id="nav-link_2" class="nav-link" aria-current="page" for="select_2" onclick="verActivo(2)">Bitcoin</label>
                                     </li>
-                                    -->
+                                    
                                 </ul>
                                 <ul class="select_main">
                                     <li>
@@ -173,15 +173,15 @@
                                             <br>
                                             <p>Copie la dirección pública</p>
                                             <div class="mb-3 input-group text-center">
-                                                <input id="USDTCopiar" type="text" class="form-control" value="TEWQUwj8f1v7mgtDG85HZ5Xsdr62EUbZw8" readonly>
-                                                <button type="button" class="btn btn-info" onclick="copiar('USDTCopiar')">
+                                                <input id="USDTCopiar_1" type="text" class="form-control" value="TEWQUwj8f1v7mgtDG85HZ5Xsdr62EUbZw8" readonly>
+                                                <button type="button" class="btn btn-info" onclick="copiar('USDTCopiar_1')">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
                                                         <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
                                                     </svg>
                                                 </button>
                                             </div>
                                             <div class="row justify-content-center">
-                                                <div class="col-12 col-md-4"><img class="img-thumbnail rounded mx-auto d-block w-100" src="img/QRHASH.jpeg" alt="QR"></div>
+                                                <div class="col-12 col-md-4"><img class="img-thumbnail rounded mx-auto d-block w-100" src="img/QRHASH_1.jpeg" alt="QR"></div>
                                             </div>
                                         </div>
                                     </li>
@@ -190,6 +190,17 @@
                                         <div class="select_content">
                                             <br>
                                             <p>Copie la dirección pública</p>
+                                            <div class="mb-3 input-group text-center">
+                                                <input id="USDTCopiar_2" type="text" class="form-control" value="bc1qszjx9cs55f2c9e7czcdghxejus7zlxz5ecvr6a" readonly>
+                                                <button type="button" class="btn btn-info" onclick="copiar('USDTCopiar_2')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="row justify-content-center">
+                                                <div class="col-12 col-md-4"><img class="img-thumbnail rounded mx-auto d-block w-100" src="img/QRHASH_2.jpeg" alt="QR"></div>
+                                            </div>
                                         </div>
                                     </li>
                                 </ul>
