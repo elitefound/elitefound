@@ -1,5 +1,6 @@
 <?php
 include(dirname(__FILE__).'/controller/sessionController.php');
+include(dirname(__FILE__).'/controller/simulador.php');
 include(dirname(__FILE__).'/controller/planesController.php');
 include(dirname(__FILE__).'/controller/footer.php');
 ?>
@@ -24,6 +25,7 @@ include(dirname(__FILE__).'/controller/footer.php');
 </head>
 <body>
 <!-- inicio del menú -->
+<?php echo $modalSimulador; ?>
 <header>
     <nav class="navbar navbar-expand-md navbar-dark">
         <div class="container">
@@ -290,6 +292,7 @@ echo $articulosPlanes;
 <script src="js/comenzar.js"></script>
 <script src="js/session.js"></script>
 <script src="js/criptomonedas.js"></script>
+<script src="js/simulador.js"></script>
 <script>
     $(document).ready(function() {
         AOS.init();

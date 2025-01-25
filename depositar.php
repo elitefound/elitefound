@@ -2,6 +2,7 @@
     include(dirname(__FILE__).'/controller/depositarController.php');
     include(dirname(__FILE__).'/controller/selectBilletera.php');
     include(dirname(__FILE__).'/controller/footer.php');
+    include(dirname(__FILE__).'/controller/simulador.php');
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +24,7 @@
 </head>
 <body>
 <!-- inicio del menú -->
+<?php echo $modalSimulador; ?>
 <header>
     <nav class="navbar navbar-expand-md navbar-dark">
         <div class="container">
@@ -290,6 +292,7 @@
 <script src="js/tools/aos.js"></script>
 <script src="js/depositar.js"></script>
 <script src="js/criptomonedas.js"></script>
+<script src="js/simulador.js"></script>
 <script>
     $(document).ready(function() {
         AOS.init();

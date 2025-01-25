@@ -2,6 +2,7 @@
     include(dirname(__FILE__).'/controller/dashboardController.php');
     include(dirname(__FILE__).'/controller/resumen.php');
     include(dirname(__FILE__).'/controller/footer.php');
+    include(dirname(__FILE__).'/controller/simulador.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -201,13 +202,13 @@
                                     </ins>
                                 </a>
                                 <br>
-                                <a style="cursor: pointer;">
+                                <a style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modalSimulador">
                                     <ins>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calculator" viewBox="0 0 16 16">
                                             <path d="M12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
                                             <path d="M4 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
                                         </svg>
-                                         Calculadora
+                                         Simulador de inversión
                                     </ins>
                                 </a>
                             </p>
@@ -218,7 +219,7 @@
         </div>
     </div>
 </section>
-
+<?php echo $modalSimulador; ?>
 <input type="hidden" id="user_value" value="<?php echo $Iduser?>">
 <?php echo $footer ?>
 
@@ -226,6 +227,7 @@
 <script src="js/tools/ajax.googleapis.com_ajax_libs_jquery_1.6.2_jquery.min.js"></script>
 <script src="js/tools/aos.js"></script>
 <script src="js/criptomonedas.js"></script>
+<script src="js/simulador.js"></script>
 <script>
 $(document).ready(function() {
         AOS.init();
