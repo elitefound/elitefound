@@ -9,21 +9,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: ../index.php");
         exit;
     }
+
     require_once('../../../config-ext.php');
-    $EmailUser = encoded($EmailDecoded);
+    $EmailUser_1 = encoded($EmailDecoded);
     $longitud = 8;
     $contraseña = generarContrasena($longitud);
     $hash = password_hash($contraseña, PASSWORD_ARGON2I);
 
     $stmt = $conn->prepare("UPDATE user SET contrasena = ? WHERE email = ?");
+    $stmt->bind_param("ss", $hash, $EmailUser_1);
+    $stmt->execute();
 
-    if ($stmt) {
-        $stmt->bind_param("ss", $hash, $EmailUser);
-        $stmt->execute();
-
-        if ($stmt->affected_rows > 0) {
-            enviaContraseña($contraseña, $EmailDecoded, $EmailUser, $emailPass);
-        }
+    if ($stmt->affected_rows > 0) {
+        enviaContraseña($contraseña, $EmailDecoded, $emailUser, $emailPass);
     }else{
         header("Location: ../index.php");
     }

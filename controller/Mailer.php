@@ -361,6 +361,7 @@ function enviaContraseña($codigo, $Email_user, $emailUser, $emailPass) {
         $verifica = "Revisa tu bandeja de entrada, tu contraseña ha sido restablecida.";
         header("Location: ../index.php?mensaje=".urlencode($verifica));
         exit();
+        
 }
 
 ?>

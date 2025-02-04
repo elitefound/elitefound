@@ -112,6 +112,9 @@ include(dirname(__FILE__).'/controller/footer.php');
                                     <input type="password" class="form-control" name="passUser" id="passUser" placeholder="Password">
                                     <label for="passUser">Contraseña</label>
                                 </div>
+                                <button type="button" class="input-group-text" onclick="togglePassword()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" fill="#e3e3e3"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" fill="#e3e3e3"/></svg>
+                                </button>
                             </div>
                         </div>
                         <div id="respuesta" style="color: red"></div>
@@ -319,6 +322,19 @@ echo $articulosPlanes;
     }
 
     window.addEventListener('resize', ajustarClase);
+
+    function togglePassword() {
+        const passwordInput = document.getElementById('passUser');
+        const button = document.querySelector('.toggle-button');
+
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            button.textContent = 'Ocultar';
+        } else {
+            passwordInput.type = 'password';
+            button.textContent = 'Mostrar';
+        }
+    }
 </script>
 </body>
 </html>
