@@ -57,7 +57,17 @@ a:active {
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-primary" id="copiarEmail" value="<?php echo $allCorreosCadena; ?>">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
     </section>
+    
     <div class="modal" tabindex="-1" id="Procesar">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -78,6 +88,25 @@ a:active {
     <script src="../js/tools/cdn.jsdelivr.net_npm_bootstrap@5.3.0_dist_js_bootstrap.bundle.min.js"></script>
     <script src="../js/tools/ajax.googleapis.com_ajax_libs_jquery_1.6.2_jquery.min.js"></script>
     <script src="depositos.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#copiarEmail').click(function() {
+                // Obtener el valor del botón
+                var textoACopiar = $(this).val();
+
+                // Crear un elemento de texto temporal
+                var $tempInput = $('<input>');
+                $('body').append($tempInput);
+                $tempInput.val(textoACopiar).select();
+                document.execCommand('copy');
+                $tempInput.remove(); // Eliminar el elemento temporal
+
+                // Opcional: mostrar un mensaje de confirmación
+                alert('Texto copiado: ' + textoACopiar);
+            });
+        });
+    </script>
     
 </body>
 </html>

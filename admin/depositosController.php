@@ -11,6 +11,7 @@
     
     $resultadosDepositos = "";
     $datos = "";
+    $allCorreos = [];
 
     $resultados = $conn->query($sql);
 
@@ -19,6 +20,7 @@
             $nombre = decoded($row['nombre']);
             $apellido = decoded($row['apellido']);
             $email = decoded($row['email']);
+            $allCorreos[] = $email;
 
             $datos = $row['id_depositos'].",".$row['id_user'].",".$nombre.",".$apellido.",".$email.",".$row['plan'].",".$row['porcentajeMin'].",".$row['porcentajeMax'].",".$row['fijo'].",".$row['tiempo'].",".$row['link'].",".$row['fecha'].",".$row['cantidad'].",".$row['archivo'].",".$row['estado'].",".$row['id_interes'].",".$row['bono'];
 
@@ -41,5 +43,8 @@
                 //$resultadosDepositos .= "<tr><td>".$nombre." ".$apellido."</td><td>".$row['plan']."</td><td>".$row['link']."</td><td>".$row['fecha']."</td><td>".$row['cantidad']."</td><td><a target=\"_blank\" href=\"".$row['archivo']."\">".$row['archivo']."</a></td>".$estado."</tr>";
                 $resultadosDepositos .="<input type=\"hidden\" id=\"dato_".$row['id_depositos']."\" value=\"".$datos."\">";
         }
+
+        $arraySinDuplicados = array_unique($allCorreos);
+        $allCorreosCadena = implode(";", $arraySinDuplicados);
     }
 ?>
