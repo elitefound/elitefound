@@ -43,8 +43,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-centrado">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.php#Mercados" style="cursor: pointer;">Mercados</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" style="cursor: pointer;" data-bs-toggle="dropdown" aria-expanded="false">Mercados</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.google.com/finance/quote/.INX:INDEXSP" target="_blank">INDEXSP</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="planes.php">Planes</a>

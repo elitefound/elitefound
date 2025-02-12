@@ -12,6 +12,7 @@ $descripcion = '';
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
+
         $cadena = "";
         $listado = "";
         $descripcion = str_replace("\\r\\n", '', $row['descripcion']);
@@ -39,6 +40,10 @@ if ($result->num_rows > 0) {
             $articulosPlanes .= '<section>';
             $imagenPlan = '<img src="img/home/planComercial2.png" alt="">';
             $styloSeccion = 0;
+        }
+
+        if($row['imagen'] != null){
+            $imagenPlan = '<img src="img/home/'.$row['imagen'].'" alt="">';
         }
 
         $articulosPlanes .= '

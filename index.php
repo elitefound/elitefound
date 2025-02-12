@@ -2,6 +2,13 @@
     include(dirname(__FILE__).'/controller/sessionController.php');
     include(dirname(__FILE__).'/controller/selectPlanes.php');
     include(dirname(__FILE__).'/controller/footer.php');
+
+    $base = 1.05;
+    $dia_actual = date("z");
+    $exponente = pow($base, $dia_actual);
+    $valorAsociados = (int) $exponente + 254;
+    $valorTransacciones = (int) $exponente + 50;
+    $valorPagosTotal = (int) $exponente + 2631;
 ?>
 
 <!DOCTYPE html>
@@ -45,8 +52,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-centrado">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" onclick="mercados()" style="cursor: pointer;">Mercados</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" style="cursor: pointer;" data-bs-toggle="dropdown" aria-expanded="false">Mercados</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.google.com/finance/quote/.INX:INDEXSP" target="_blank">INDEXSP</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="planes.php">Planes</a>
@@ -343,9 +353,9 @@
     </div>
 
 <section class="seccion_oscura seccion_2" style="height: 56.4vw;">
-    <div class="customers marcador"><!--<p>254k</p><p>total customers</p>--></div>
-    <div class="transactions marcador"><!--<p>50M</p><p>total transactions</p>--></div>
-    <div class="payments marcador"><!--<p>2631</p><p>total daily Payments</p>--></div>
+    <div class="customers marcador"><p><?php echo $valorAsociados; ?>k</p><p>Asociados</p></div>
+    <div class="transactions marcador"><p><?php echo $valorTransacciones; ?>M</p><p>Transacciones totales</p></div>
+    <div class="payments marcador"><p><?php echo $valorPagosTotal; ?></p><p>Pagos totales</p></div>
     <div data-aos="zoom-in-right" class="info m-3"><p>En ELITE FOUND, entendemos la importancia de tomar decisiones financieras inteligentes y seguras. Nuestro compromiso es brindarte la oportunidad de invertir en algunos de los mercados más sólidos, respetados y diversificados del mundo, incluyendo el S&P 500, la Bolsa de Valores de Tokio, la Bolsa de Londres, el NASDAQ, así como en materias primas y por supuesto, en criptomonedas con gran proyección de crecimiento. Aquí, no solo te brindamos un camino hacia la inversión, sino también hacia la confianza y la rentabilidad.</p></div>
     <div data-aos="zoom-in-left" class="ilustracion mb-3"><img src="img/home/ilustracion1.png" alt=""></div>
 </section>
@@ -501,12 +511,6 @@
         header.classList.toggle("bg-dark", window.scrollY > 0);
         ajustarClase();
     });
-
-    function mercados(){
-        $('html, body').animate({
-            scrollTop: $('#Mercados').offset().top
-        }, 1000);
-    }
 
     function ajustarClase() {
         const elemento = document.querySelector("nav");

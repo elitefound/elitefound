@@ -56,6 +56,13 @@ $selectPlanes = "";
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
+
+        if($row['imagen'] == null){
+            $imgPlan = "img/home/planComercial.png";
+        }else{
+            $imgPlan = "img/home/".$row['imagen'];
+        }
+
         $cadena = "";
         $listado = "";
         $selectPlanes .= '<option value="'.$row['id_plan'].'">'.$row['plan'].'</option>';
@@ -70,7 +77,7 @@ if ($result->num_rows > 0) {
                                 <h6 class="card-subtitle mb-2 text-body-secondary">OBTENGA SU PRIMERA GANANCIA</h6>
                             </div>
                             <div class="col-3">
-                                <img src="img/home/planComercial.png" alt="">
+                                <img src="'.$imgPlan.'" alt="">
                             </div>
                         </div><table class="table table-borderless table-hover">';
         $cadena = $row['items'];
