@@ -60,27 +60,111 @@ function passActualizar(){
     var PassNueva = $("#PassNueva").val();
     var PassRepeat = $("#PassRepeat").val();
 
-    $.ajax({
-        url: './controller/passActualizar.php',
-        type: 'POST',
-        data:{
-            PassActual: PassActual,
-            PassNueva: PassNueva,
-            PassRepeat: PassRepeat,
-            Iduser: Iduser
-        },
-        success: function(data){
-            if (data === "Bien"){
-                Swal.fire('Contraseña actualizada con éxito', '', 'success');
-                return;
+    if(PassNueva === PassRepeat){
+        var pass = PassRepeat;
+        if(pass != PassActual){
+            var proceder = true;
+
+            var err_form4 = /[\-_*./()&$!#%+=@]/g;
+            var err_form3 = /[\d]/g;
+            var err_form2 = /[A-Z]/g;
+            var err_form1 = /[a-z]/g;
+            var numeroCaracteres = pass.length;
+            var palabras = pass.split(" ");
+        
+            if(numeroCaracteres < 8){
+                proceder = false
+            }
+            
+            if(!err_form1.test(pass)){
+                proceder = false
+            }
+        
+            if(!err_form2.test(pass)){
+                proceder = false
+            }
+        
+            if(!err_form3.test(pass)){
+                proceder = false
+            }
+        
+            if(!err_form4.test(pass)){
+                proceder = false
+            }
+        
+            if (palabras.length != 1) {
+                proceder = false;
+            }
+
+            if(proceder === true){
+
+                $("#PassNueva").removeClass("is-invalid");
+                $("#PassRepeat").removeClass("is-invalid");
+                $("#PassActual").removeClass("is-invalid");
+
+                $.ajax({
+                    url: './controller/passActualizar.php',
+                    type: 'POST',
+                    data:{
+                        PassActual: PassActual,
+                        PassNueva: PassNueva,
+                        PassRepeat: PassRepeat,
+                        Iduser: Iduser
+                    },
+                    success: function(data){
+                        if (data === "Bien"){
+                            $("#PassNueva").addClass("is-valid");
+                            $("#PassRepeat").addClass("is-valid");
+                            $("#PassActual").addClass("is-valid");
+
+                            Swal.fire('Contraseña actualizada con éxito', '', 'success');
+                            return;
+                        }else{
+                            $("#PassNueva").removeClass("is-valid").addClass("is-invalid");
+                            $("#PassRepeat").removeClass("is-valid").addClass("is-invalid");
+                            $("#PassActual").removeClass("is-valid").addClass("is-invalid");
+
+                            Swal.fire({
+                                title: "Acción cancelada",
+                                text: data,
+                                icon: "error"
+                            });
+                            return;
+                        }
+                    }
+                });
+
             }else{
+                $("#PassNueva").removeClass("is-valid").addClass("is-invalid");
+                $("#PassRepeat").removeClass("is-valid").addClass("is-invalid");
                 Swal.fire({
                     title: "Acción cancelada",
-                    text: data,
+                    text: "No cumple con las características mínimas de contraseña, mínimo 8 caracteres de longitud, una letra mayúscula y una minúscula, un número y un carácter que no sea una letra ni número.",
                     icon: "error"
                 });
                 return;
             }
+
+        }else{
+            $("#PassNueva").removeClass("is-valid").addClass("is-invalid");
+            $("#PassRepeat").removeClass("is-valid").addClass("is-invalid");
+            $("#PassActual").removeClass("is-valid").addClass("is-invalid");
+            Swal.fire({
+                title: "Acción cancelada",
+                text: "La contraseña actual debe ser diferente a la nueva",
+                icon: "error"
+            });
+            return;
         }
-    });
+        
+    }else{
+        $("#PassNueva").removeClass("is-valid").addClass("is-invalid");
+        $("#PassRepeat").removeClass("is-valid").addClass("is-invalid");
+        Swal.fire({
+            title: "Acción cancelada",
+            text: "No coinciden las contraseñas",
+            icon: "error"
+        });
+        return;
+    }
 }

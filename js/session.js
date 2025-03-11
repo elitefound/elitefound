@@ -4,7 +4,7 @@ $("#btnAcceso").click(function(){
     var email = $("#EmailUser").val().trim();
     var pass = $("#passUser").val().trim();
 
-    var err_form4 = /[\-_*./()&$!#%+=]/g;
+    var err_form4 = /[\-_*./()&$!#%+=@]/g;
     var err_form3 = /[\d]/g;
     var err_form2 = /[A-Z]/g;
     var err_form1 = /[a-z]/g;
