@@ -22,9 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $idProcentaje = registroBeneficios($id_plan, $porcentaje, $fecha_0, $conn);
         // Obtener depósitos solo una vez
-        $sql = "SELECT id_depositos, id_user, fecha, fechafinal, cantidad FROM depositos WHERE estado = 1 AND id_plan = ?";
+        $sql = "SELECT id_depositos, id_user, fecha, fechafinal, cantidad FROM depositos WHERE estado = 1 AND id_plan = ? AND fecha <= ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("i", $id_plan);
+        $stmt->bind_param("is", $id_plan, $fecha_0);
         $stmt->execute();
         $result = $stmt->get_result();
         $stmt->close();
