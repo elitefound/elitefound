@@ -30,7 +30,7 @@
                     <table class="table">
                         <tr>
                             <th>Plan</th>
-                            <th>Porcentaje</th>
+                            <th colspan="2">Porcentaje</th>
                             <th>Fecha</th>
                             <th></th>
                         </tr>

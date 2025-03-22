@@ -4,7 +4,7 @@ $tablaVisualizar = "";
 
 $sql_1 = "SELECT po.id, po.porcentaje, po.fecha, pl.plan
         FROM porcentajes AS po
-        JOIN planes AS pl ON po.planes = pl.id_plan ORDER BY pl.plan ASC";
+        JOIN planes AS pl ON po.planes = pl.id_plan ORDER BY pl.plan ASC, po.fecha ASC";
 
 $tituloPlan = "";
 $resultado = $conn->query($sql_1);
