@@ -1,11 +1,13 @@
 <?php
     require_once("../../../config-ext.php");
     $fecha_actual = date('Y-m-d');
-    $sql = "SELECT id_plan, plan, porcentajeMin, porcentajeMax FROM planes WHERE fijo = 0";
+    $sql = "SELECT id_plan, plan, porcentajeMin, porcentajeMax, tiempo FROM planes WHERE fijo = 0 ORDER BY plan ASC";
     $result = $conn->query($sql);
+
     if($result->num_rows > 0){
         $tablaPorcentaje = "";
         while($row = $result->fetch_assoc()){
+
             $tablaPorcentaje .= '<tr>
                             <td><input class="form-control" type="text" name="plan_'.$row["id_plan"].'" id="plan_'.$row["id_plan"].'" value="'.$row["plan"].'" readonly></td>
                             <td><input class="form-control" type="number" name="porcentaje_'.$row["id_plan"].'" id="porcentaje_'.$row["id_plan"].'" min="'.$row["porcentajeMin"].'" max="'.$row["porcentajeMax"].'" step="0.1"></td>
@@ -17,7 +19,7 @@
                                     </svg>
                                 </button>
                             </td>
-                        </tr>';
+                        </tr><input type="hidden" name="tiempo_'.$row["id_plan"].'" id="tiempo_'.$row["id_plan"].'" value="'.$row["tiempo"].'">';
         }
     }
 ?>

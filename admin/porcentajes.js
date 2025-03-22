@@ -2,6 +2,7 @@ function agregarPorcentaje(id) {
   const plan = $("#plan_" + id).val();
   const porcentaje = $("#porcentaje_" + id).val();
   const fecha = $("#fecha_" + id).val();
+  const tiempo = $("#tiempo_" + id).val();
   
 if(porcentaje == 0 || porcentaje == null){
   return;

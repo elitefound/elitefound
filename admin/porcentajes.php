@@ -50,12 +50,13 @@
                             Registros
                         </h2>
                     </caption>
-                    <table class="table">
+                    <table class="table table-striped table-hover">
                         <tr>
                             <th>Id</th>
                             <th>Plan</th>
                             <th>Porcentaje</th>
                             <th>Fecha</th>
+                            <th></th>
                         </tr>
                         <?php echo $tablaVisualizar; ?>
                     </table>

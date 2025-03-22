@@ -4,10 +4,16 @@ $tablaVisualizar = "";
 
 $sql_1 = "SELECT po.id, po.porcentaje, po.fecha, pl.plan
         FROM porcentajes AS po
-        JOIN planes AS pl ON po.planes = pl.id_plan";
+        JOIN planes AS pl ON po.planes = pl.id_plan ORDER BY pl.plan ASC";
+
+$tituloPlan = "";
 $resultado = $conn->query($sql_1);
 if($resultado->num_rows > 0){
     while($row_2 = $resultado->fetch_assoc()){
+        if($tituloPlan !== $row_2["plan"]){
+            $tituloPlan = $row_2["plan"];
+            $tablaVisualizar .= '<tr class="table-dark"><td colspan="5" class="text-center"><strong>'.$tituloPlan.'</strong></td></tr>';
+        }
         $tablaVisualizar .= '<tr>
             <td>'.$row_2["id"].'</td>
             <td>'.$row_2["plan"].'</td>

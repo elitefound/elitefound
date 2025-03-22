@@ -34,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $depositoUser = $row["id_user"];
                 $depositoFecha = new DateTime($row["fecha"]);
                 $depositoFechaFin = new DateTime($row["fechafinal"]);
+                $meses = contarMeses($depositoFecha, $depositoFechaFin);
                 $depositoCantidad = $row["cantidad"];
                 $diasHabiles = 0;
                 $diasHabiles2 = 0;
@@ -49,7 +50,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
 
                 if ($diasHabiles > 0) {
-                    $gananciasDia = (($depositoCantidad * ($porcentaje / 100)) * 12) / $diasHabiles;
+                    $valorGananciaMes =  $depositoCantidad * ($porcentaje / 100);
+
+                    $gananciasDia = ($valorGananciaMes * $meses) / $diasHabiles;
                     $gananciasSemanal = ($diasHabiles2 > 5) ? $gananciasDia * 5 : $gananciasDia * $diasHabiles2;
                     beneficiosPlan($depositoUser, $fecha_0, $gananciasSemanal, $row["id_depositos"], $idProcentaje, $conn);
                 }
@@ -82,4 +85,18 @@ function registroBeneficios($id_plan, $porcentaje, $fechadeGanancias, $conn) {
         $stmt->close();
         return null;
     }
+}
+
+function contarMeses($fechaInicio, $fechaFin) {
+    // Verificar si las fechas ya son objetos DateTime
+    if (!$fechaInicio instanceof DateTime) {
+        $fechaInicio = new DateTime($fechaInicio);
+    }
+    if (!$fechaFin instanceof DateTime) {
+        $fechaFin = new DateTime($fechaFin);
+    }
+
+    $diferencia = $fechaInicio->diff($fechaFin);
+    
+    return ($diferencia->y * 12) + $diferencia->m;
 }
