@@ -13,23 +13,69 @@
     src: url(../fonts/Hero.otf);
 }
 
-:root {
-    --blanco: #ffffff;
-    --azul: #00183B;
-    --azul_1: #375272;
-    --negro: #000000;
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/Roboto-Regular.ttf);
 }
 
-h1, h2, h3 {
+:root {
+    --blanco: #ffffff;
+    --azul: #00183b;
+    
+    --azul_1: #375272;
+
+    --tarjeta_1: 237, 238, 239;    
+    --tarjeta_2: 74, 178, 181;
+    --tarjeta_3: 0, 24, 60;
+    --tarjeta_4: 116, 229, 170;
+    
+    --negro: #000000;
+    --verde: #2AD47B;
+    --gris: #ececec;
+}
+
+.hero{
     font-family: 'Hero', sans-serif;
+}
+
+.notosans{
+    font-family: 'NotoSans-Regular', sans-serif;
+}
+
+.robot{
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    font-size: 3.5vw;
+}
+
+h2, h3 {
     font-size: 3vw;
-    text-align: center;
 }
 
 p, a{
-    font-family: 'NotoSans-Regular', sans-serif;
     font-size: 1.3vw;
+}
+
+.textoCentro {
+    text-align: center;
+}
+
+.textoIzquierdo {
+    text-align: left;
+}
+
+.textoJustificado {
     text-align: justify;
+}
+
+.btn-Verde {
+    background-color: var(--verde);
+    color: var(--blanco);
+    font-size: 1.3vw;
+    margin: auto;
+    border: none;
 }
 
 a{
@@ -55,10 +101,14 @@ body{
     background-repeat: no-repeat;
 }
 
+.imagenslogan{
+    height: 56.4vw;
+}
+
 section{
     width: 100vw;
     padding: 5vw;
-    padding-top: 10vw;
+    padding-top: 5vw;
 }
 
 .centrarElementos {
@@ -92,7 +142,7 @@ section{
     gap: 3vw;
     grid-template-columns: repeat(2, 1fr);
 }
-
+/*-----------------*/
 .articulos{
     width: 95%;
     margin: auto;
@@ -116,7 +166,41 @@ section{
 	position:relative;
 	top:1px;
 }
+/*-----------------*/
+.articulosx4{
+    width: 95%;
+    margin: auto;
+    padding-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
+.articulosx4 article{
+    width: 25%;
+    min-width: 250px;
+    position: relative;
+}
+
+.tarjetax4{
+    width: 100%;
+    position: relative;
+}
+
+.tarjetax4 img{
+    width: 100%;
+}
+
+.articulosx4 article:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.articulosx4 article:active {
+	position:relative;
+	top:1px;
+}
+/*-----------------*/
 .tarjeta img{
     width: 100%;
 }
@@ -338,13 +422,51 @@ footer{
     border: none;
 }
 
+.btnHover {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    color: transparent;
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.4s ease;
+}
+
+.btnHover:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #FFFFFF;
+}
+
 @media (max-width: 768px) {
-    h1, h2, h3 {
+    .btn-Verde {
+        background-color: #4AB2B5;
+        font-size: 3vw;
+        display: block;
+        margin: auto;
+    }
+
+    .espacioMenu{
+        height: 56px;
+    }
+
+    h1{
+        font-size: 7vw;
+    }
+
+    h2, h3 {
         font-size: 15px;
     }
 
     p, table, a{
-        font-size: 10px;
+        font-size: 4vw;
     }
 
     section{
@@ -389,5 +511,9 @@ footer{
 
     label{
         font-size: 15px;
+    }
+
+    .imagenslogan{
+        height: 100vh;
     }
 }

@@ -1,0 +1,202 @@
+.panelColor_1 { background-color: rgba(var(--tarjeta_1),1); color: var(--azul);}
+.panelColor_2 { background-color: rgba(var(--tarjeta_2),1); color: var(--blanco)}
+.panelColor_3 { background-color: rgba(var(--tarjeta_3),1); color: var(--blanco)}
+.panelColor_4 { background-color: rgba(var(--tarjeta_4),1); color: var(--blanco)}
+
+:root {
+	--cards: 4;
+	--cardHeight: 87vh;
+	--cardTopPadding: 1.5em;
+	--cardMargin: 4vw;
+}
+
+.tituloTarjeta{
+  font-weight: 900;
+  font-size: 3vw;
+}
+
+.listadoTarjeta{
+  font-size: 1.6vw;
+}
+
+.textoIzquierdo{
+  position: relative;
+}
+
+.terminosTarjeta{
+  font-size: 2vw;
+  display: block;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
+
+.containerCards{
+  width: 80vw;
+  margin: auto;
+}
+
+#cards {
+	list-style: none;
+	padding-left: 0;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(var(--cards), var(--cardHeight));
+	gap: var(--cardMargin);
+	padding-bottom: calc(var(--cards) * var(--cardTopPadding));
+	margin-bottom: var(--cardMargin);
+}
+
+.tarjeta{
+  position: sticky;
+	top: 5%;
+}
+
+.imgTarjetaScroll{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right top;
+}
+
+.cuerpoTarjeta{
+  background-size: 0%;
+  overflow: hidden;
+  border-radius: 50px;
+  transition: all 0.5s;
+  height: 50vw;
+}
+
+.panel {
+  background-size: 0%;
+}
+
+@media (max-width: 768px) {
+  .tituloTarjeta{
+    font-size: 4vw;
+  }
+  .listadoTarjeta{
+    font-size: 3vw;
+  }
+  .terminosTarjeta{
+    font-size: 2vw;
+  }
+  #cards *{
+    margin: 0;
+    padding: 0;
+  }
+  .imgTarjetaScroll{
+    display: none;
+  }
+  .containerCards{
+    width: 100%;
+  }
+  #cards {
+		display: block;
+		grid-template-columns: none;
+		grid-template-rows: none;
+		gap: 0;
+		padding-bottom: 0;
+		margin-bottom: 1rem;
+	}
+  .tarjeta{
+    position: relative;
+  }
+  .panel {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 10% 0 10% 0 !important;
+  }
+  .cuerpoTarjeta{
+    width: 80% !important;
+    height: auto;
+    margin: auto !important;
+  }
+  .panelColor_1 { background-color: rgba(var(--tarjeta_1),0.5); color: var(--azul);}
+  .panelColor_2 { background-color: rgba(var(--tarjeta_2),0.5); color: var(--blanco);}
+  .panelColor_3 { background-color: rgba(var(--tarjeta_3),0.5); color: var(--blanco);}
+  .panelColor_4 { background-color: rgba(var(--tarjeta_4),0.5); color: var(--blanco);}
+}
+
+/*
+  #cards{
+    margin-bottom: 5px;
+    padding-bottom:5px;
+  }
+  .containerCards{
+    width: 90%;
+  }
+  .tarjeta{
+    position: relative;
+    padding: 0;
+    margin: 0;
+    margin: auto;
+  }
+  .cuerpoTarjeta{
+    height: 100vh;
+    margin: 0;
+  }
+  .imgTarjetaScroll{
+    display: none;
+  }
+  .panel {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50px;
+  }
+  .textoIzquierdo{
+    position: relative;
+  }
+  .panelColor_1 { background-color: rgba(var(--tarjeta_1),0.5); color: var(--azul);}
+  .panelColor_2 { background-color: rgba(var(--tarjeta_2),0.5); color: var(--blanco);}
+  .panelColor_3 { background-color: rgba(var(--tarjeta_3),0.5); color: var(--blanco);}
+  .panelColor_4 { background-color: rgba(var(--tarjeta_4),0.5); color: var(--blanco);}
+*/
+/*#pinContainer {
+    width: 80%;
+    height: 100vh;
+    margin: auto;
+    overflow: hidden;
+    -webkit-perspective: 1000;
+            perspective: 1000;
+  }
+
+  #slideContainer {
+    height: 100%;
+  }
+
+  .panel {
+    height: 100vh;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    background-size: 0%;
+  }
+
+  .imgTarjetaScroll{
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+  }
+
+  @media (max-width: 768px) {
+    #pinContainer{
+      width: 100%;
+    }
+    .panel{
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      padding: 2vw;
+    }
+    .imgTarjetaScroll{
+      display: none;
+    }
+    .panelColor_1 { background-color: rgba(var(--azul_2),0.5); color: var(--blanco);}
+    .panelColor_2 { background-color: rgba(var(--azul_3),0.5); color: var(--blanco);}
+    .panelColor_3 { background-color: rgba(var(--gris),0.5); color: var(--azul);}
+  }

@@ -1,9 +1,10 @@
 .marquee-container {
     overflow: hidden;
     width: 100%;
-    background-color: #ffffff;
-    color: #00183B;
-    padding: 20px;
+    background-color: #D9D9D9;
+    color: #00183C;
+    color: #00183C;
+    height: 4.5vw;
     position: relative;
   }
   
@@ -16,10 +17,10 @@
   }
   
   @keyframes scroll {
-    from {
+    0% {
       transform: translateX(100%);
     }
-    to {
+    100% {
       transform: translateX(-100%);
     }
   }

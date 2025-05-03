@@ -1,10 +1,13 @@
 /* seccion 1 */
 .carousel-item > img{
-    filter: brightness(0.5) contrast(1.2);
+    width: 100%;
+    height: auto;
 }
 
 .carousel-caption{
     color: #EAEAEA;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .seccion_1 h2{
@@ -24,6 +27,8 @@
     grid-template-areas:    ". customers transactions payments ."
                             ". . . . ."
                             "info info . ilustracion ilustracion";
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+
 }
 
 .customers{
@@ -105,7 +110,7 @@
 }
 
 .leyenda p{
-    font-size: 1.6vw;
+    font-size: 2vw;
     text-align: center;
 }
 
@@ -119,17 +124,53 @@
 }
 
 @media (max-width: 768px) {
+    .imagenContacto{
+        display: none;
+    }
+    .seccion_6{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .carousel-item {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .carousel-item h1{
+        font-size: 8vw;
+    }
+
+    .carousel-item p{
+        font-size: 2vw;
+    }
+
+    .carousel-item > img{
+        filter: brightness(77%) saturate(88%) contrast(81%);
+        position: absolute;
+        right: -28%;
+        top: 0;
+        height: 100vh;
+        width: auto;
+    }
+
     .seccion_1 h2{
         font-size: 30px;
     }
 
     .seccion_2{
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-areas:    ". customers transactions payments ."
-                                ". . . . ."
-                                "info info info info info"
-                                ". ilustracion ilustracion ilustracion .";
+
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas:    "customers"
+                                "transactions"
+                                "payments"
+                                "."
+                                "info"
+                                "ilustracion";
         height: auto !important;
     }
 
@@ -154,4 +195,33 @@
         margin: 2vw;
     }
 
+}
+
+@media (max-width: 540px) {
+    .carousel-item > img{
+        right: -40%;
+    }
+    
+    .carousel-item h1{
+        font-size: 11vw;
+    }
+
+    .carousel-item p{
+        font-size: 3vw;
+    }
+
+}
+
+@media (max-width: 430px) {
+    .carousel-item > img{
+        right: -52%;
+    }
+        
+    .carousel-item h1{
+        font-size: 12vw;
+    }
+
+    .carousel-item p{
+        font-size: 3.5vw;
+    }
 }

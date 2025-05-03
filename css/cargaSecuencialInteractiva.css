@@ -1,0 +1,47 @@
+.containercargaSecuencial {
+    width: 100%;
+    margin: 30px auto;
+  }
+
+  .containercargaSecuencial .box {
+    border: none;
+    border-radius: 20px;
+    margin: 0px 0px 5px 0px;
+    position: relative;
+  }
+
+  .containercargaSecuencial .box.active {
+    border: 2px solid #eee;
+  }
+
+  .containercargaSecuencial .title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .containercargaSecuencial .description {
+    margin-top: 10px;
+    display: none;
+    color: #747474;
+  }
+
+  .containercargaSecuencial .progress-bar {
+    width: 90%;
+    background: #eee;
+    height: 2px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+    display: none;
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .containercargaSecuencial .progress {
+    height: 100%;
+    width: 0;
+    background-color: #2BD47B;
+    transition: width 5s linear;
+  }

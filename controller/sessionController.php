@@ -10,12 +10,12 @@ include('generarCodigo.php');
 $referido = "";
 
 if(isset($_GET["id"])){
-    $referido = '<div class="form-floating mb-3">
+    $referido = '<div class="form-floating mb-1">
         <input type="text" class="form-control inputRegistro" name="referido" id="floatingInputReferido" placeholder="Patrocinador" value="'.$_GET["id"].'" readonly>
         <label for="floatingInputReferido">Patrocinador</label>
     </div>';
 }else{
-    $referido = '<div class="form-floating mb-3">
+    $referido = '<div class="form-floating mb-1">
         <input type="text" class="form-control inputRegistro" name="referido" placeholder="Patrocinador" value="Elite.Found" readonly>
         <label for="floatingInputReferido">Patrocinador</label>
     </div>';

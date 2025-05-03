@@ -1,14 +1,15 @@
 <?php
     include(dirname(__FILE__).'/controller/sessionController.php');
-    include(dirname(__FILE__).'/controller/selectPlanes.php');
+    //include(dirname(__FILE__).'/controller/selectPlanes.php');
+    include(dirname(__FILE__).'/controller/selectPlanesNew.php');
     include(dirname(__FILE__).'/controller/footer.php');
 
     $base = 1.05;
     $dia_actual = date("z");
     $exponente = pow($base, $dia_actual);
-    $valorAsociados = (int) $exponente + 254;
-    $valorTransacciones = (int) $exponente + 50;
-    $valorPagosTotal = (int) $exponente + 2631;
+    $valorAsociados = (int) ($exponente * 0.338);
+    $valorTransacciones = (int) ($exponente * 0.13);
+    $valorPagosTotal = (int) ($exponente + 770);
 ?>
 
 <!DOCTYPE html>
@@ -22,11 +23,11 @@
     <link rel="stylesheet" href="css/tools/getbootstrap.com_docs_5.3_assets_css_docs.css">
     <link rel="stylesheet" href="css/tools/aos.css" type="text/css">
     <link rel="stylesheet" type="text/css"  href="css/style.css">
-
     <link rel="stylesheet" href="css/home/homeStyle.css">
     <link rel="stylesheet" href="css/home/menu.css">
-
     <link rel="stylesheet" href="css/criptomonedas.css">
+    <link rel="stylesheet" href="css/cargaSecuencialInteractiva.css">
+    <link rel="stylesheet" href="css/tarjetasScroll.css">
 
     <title>INICIO | ELITE FOUND</title>
     <script src="https://www.google.com/recaptcha/api.js?render=6LdDK4sqAAAAAC_ZMNbh9LH2V-BsW56Swj7QrDPz"></script>
@@ -189,7 +190,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col">
-                            <h1 class="modal-title">REGISTRO</h1>
+                            <p class="modal-title">REGISTRO</p>
                         </div>
                     </div>
                     <br>
@@ -199,14 +200,14 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col">
-                            <div class="form-floating mb-3">
+                        <div class="col-md-6">
+                            <div class="form-floating mb-1">
                                 <input type="text" class="form-control inputRegistro" name="Nombre" id="floatingInputNombre" placeholder="Nombre" required>
                                 <label for="floatingInputNombre">Nombre</label>
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="form-floating mb-3">
+                        <div class="col-md-6">
+                            <div class="form-floating mb-1">
                                 <input type="text" class="form-control inputRegistro" name="Apellido" id="floatingInputApellido" placeholder="Apellido" required>
                                 <label for="floatingInputApellido">Apellido</label>
                             </div>
@@ -214,7 +215,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <div class="form-floating mb-3">
+                            <div class="form-floating mb-1">
                                 <input type="email" class="form-control inputRegistro" name="Email" id="floatingInputemail" placeholder="Correo electrónico" required>
                                 <label for="floatingInputemail">Correo electrónico</label>
                             </div>
@@ -222,7 +223,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <div class="form-floating mb-3">
+                            <div class="form-floating mb-1">
                                 <input type="text" class="form-control inputRegistro" name="userName" id="floatingInputuserName" placeholder="Nombre de usuario" required>
                                 <label for="floatingInputuserName">Nombre de usuario</label>
                             </div>
@@ -230,7 +231,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <div class="form-floating mb-3">
+                            <div class="form-floating mb-1">
                                 <input type="password" class="form-control inputRegistro" name="Password_1" id="floatingInputpassword" placeholder="Contraseña" aria-describedby="validationServer03Feedback" required>
                                 <label for="floatingInputpassword">Contraseña</label>
                                 <div id="validationServer03Feedback" class="invalid-feedback">
@@ -250,7 +251,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <div class="form-floating mb-3">
+                            <div class="form-floating mb-1">
                                 <input type="password" class="form-control inputRegistro" name="Password_2" id="floatingInputpasswordConf" placeholder="Contraseña" required>
                                 <label for="floatingInputpasswordConf">Confirmar contraseña</label>
                                 <div id="validationServer03Feedback" class="invalid-feedback">
@@ -264,7 +265,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <div class="form-floating mb-3">
+                            <div class="form-floating mb-1">
                                 <input type="text" class="form-control inputRegistro" name="Cedula" id="floatingInputCedula" placeholder="Cédula" required>
                                 <label for="floatingInputCedula">Documento de identidad</label>
                             </div>
@@ -296,201 +297,197 @@
 </div>
 
 <?php echo isset($prueba) ? $prueba : ''; ?>
+<div class="espacioMenu"></div>
 
     <div id="carouselExampleCaptions" class="carousel slide seccion_1 centrarElementos" data-bs-ride="carousel">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <!--<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>-->
         </div>
         <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="6000">
-                <img src="img/home/homeFondo.png" class="d-block w-100" alt="...">
+            <!--<div class="carousel-item">
+                <img src="img/home/homeFondo.png" class="d-block" alt="..." style="filter: brightness(0.4);">
                 <div class="carousel-caption d-flex flex-column justify-content-center align-items-center" style="top: 50%; transform: translateY(-50%);">
-                    <h1>Invierte con sabiduría</h1>
-                    <h4>Haz que cada decisión financiera cuente hacia un futuro extraordinario.</h4>
+                    <div class="row">
+                        <div class="col-12 textoCentro robot">
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="6000">
-                <img src="img/home/Invierte con sabiduría.jpeg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center" style="top: 50%; transform: translateY(-50%);">
-                    <h1>Cosecha tu futuro</h1>
-                    <h4>Equilibra tus recursos hoy para un mañana próspero.</h4>
-                </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="6000">
-                <img src="img/home/Transforma tus oportunidades.jpeg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center" style="top: 50%; transform: translateY(-50%);">
-                    <h1>Transforma tus oportunidades</h1>
-                    <h4>Convierte tus decisiones en un legado financiero que trascienda generaciones.</h4>
-                </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="6000">
-                <img src="img/home/Crecimiento sin límites.jpeg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center" style="top: 50%; transform: translateY(-50%);">
-                    <h1>Crecimiento sin límites</h1>
-                    <h4>Tu capital no solo crece, se multiplica. Únete a la nueva era.</h4>
-                </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="6000">
-                <img src="img/home/Un futuro brillante comienza ahora.jpeg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-flex flex-column justify-content-center align-items-center" style="top: 50%; transform: translateY(-50%);">
-                    <h1>Un futuro brillante comienza ahora</h1>
-                    <h4>Haz de cada inversión una historia de éxito. Donde tus sueños financieros se hacen realidad.</h4>
+            </div>-->
+            <div class="carousel-item active">
+                <img src="img/home/Banner_1.png" class="d-block" alt="...">
+                <div class="carousel-caption d-flex flex-column justify-content-center align-items-start">
+                    <div class="row">
+                        <div class="col-12 col-md-7 textoIzquierdo robot">
+                            <h1><strong>Invierte en tu futuro, desde cualquier lugar, en cualquier momento.</strong></h1>
+                            <p class="robot">Accede a mercados globales, rentabilidad constante y atención personalizada 24/7</p>
+                            <br>
+                            <div>
+                                <button class="btn-Verde mb-3 p-2 rounded" data-bs-toggle="modal" data-bs-target="#Registro">Comenzar a Invertir</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <!--<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
-        </button>
+        </button>--> 
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="marquee-container robot">
+                <div class="marquee" id="cryptoTable"><p>Cargando valores del mercado.... Cargando valores del mercado.... Cargando valores del mercado.... Cargando valores del mercado.... Cargando valores del mercado.... Cargando valores del mercado.... Cargando valores del mercado....</p></div>
+            </div>
+        </div>
     </div>
 
-<section class="seccion_oscura seccion_2" style="height: 56.4vw;">
+<section class="seccion_oscura seccion_2 robot">
     <div class="customers marcador"><p><?php echo $valorAsociados; ?>k</p><p>Asociados</p></div>
     <div class="transactions marcador"><p><?php echo $valorTransacciones; ?>M</p><p>Transacciones totales</p></div>
     <div class="payments marcador"><p><?php echo $valorPagosTotal; ?></p><p>Pagos totales</p></div>
-    <div data-aos="zoom-in-right" class="info m-3"><p>En ELITE FOUND, entendemos la importancia de tomar decisiones financieras inteligentes y seguras. Nuestro compromiso es brindarte la oportunidad de invertir en algunos de los mercados más sólidos, respetados y diversificados del mundo, incluyendo el S&P 500, la Bolsa de Valores de Tokio, la Bolsa de Londres, el NASDAQ, así como en materias primas y por supuesto, en criptomonedas con gran proyección de crecimiento. Aquí, no solo te brindamos un camino hacia la inversión, sino también hacia la confianza y la rentabilidad.</p></div>
-    <div data-aos="zoom-in-left" class="ilustracion mb-3"><img src="img/home/ilustracion1.png" alt=""></div>
+    <div data-aos="zoom-in-right" class="info m-3"><p><br>En ELITE FOUND, nos enfocamos en decisiones financieras inteligentes y seguras. Te ofrecemos acceso a mercados sólidos y diversificados como el S&P 500, NASDAQ, Bolsa de Tokio, Bolsa de Londres, materias primas y criptomonedas con alto potencial. Nuestro objetivo es brindarte confianza y rentabilidad en cada inversión.</p></div>
+    <div data-aos="zoom-in-left" class="ilustracion mb-3 p-2"><br><img class="p-3" src="img/home/ilustracion1.png" alt=""></div>
 </section>
-<section class="seccion_clara" id="Mercados">
-    <div data-aos="zoom-in" id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="slideHome">
-                    <div class="izquierda">
-                        <div class="texto_1 centrarElementos">
-                            <div class="texto_1_1 my-1">
-                                <h2 style="text-align: left;">
-                                    MATERIAS PRIMAS&nbsp;&nbsp;
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="46.508" height="27.916" viewBox="0 0 46.508 27.916">
-                                        <g id="Grupo_1232" data-name="Grupo 1232" transform="translate(-501.512 -2615)">
-                                            <path id="Trazado_422" data-name="Trazado 422" d="M526.084,2641.916h19.47a1.443,1.443,0,0,0,1.289-2.094l-4.373-8.671a1.845,1.845,0,0,0-1.648-1.015h-9.914a2.215,2.215,0,0,0-2.028,1.325l-3.87,8.811A1.173,1.173,0,0,0,526.084,2641.916Z" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                            <path id="Trazado_423" data-name="Trazado 423" d="M503.7,2641.916h19.47a1.444,1.444,0,0,0,1.289-2.094l-4.373-8.671a1.847,1.847,0,0,0-1.649-1.015h-9.914a2.214,2.214,0,0,0-2.027,1.325l-3.87,8.811A1.173,1.173,0,0,0,503.7,2641.916Z" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                            <path id="Trazado_424" data-name="Trazado 424" d="M515.482,2627.78h19.47a1.443,1.443,0,0,0,1.289-2.094l-4.373-8.671A1.847,1.847,0,0,0,530.22,2616h-9.914a2.215,2.215,0,0,0-2.028,1.324l-3.87,8.812A1.173,1.173,0,0,0,515.482,2627.78Z" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                        </g>
-                                    </svg>
-                                </h2>
-                                <br>
-                                <p>Desde la perspectiva de una cartera de inversión, incorporar materias primas en su estrategia es una elección inteligente para diversificar más allá de los activos convencionales. En ELITE FOUND, le damos la oportunidad de aprovechar los mercados globales de metales preciosos y energéticos más destacados. Contamos con una presencia en más de 20 materias primas a nivel internacional y le ofrecemos la flexibilidad necesaria en cuanto al tamaño de sus inversiones, lo que facilita su participación en estos mercados con confianza.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="derecha my-1">
-                        <div class="videoSlide centrarElementos">
-                            <img src="img/home/Materias primas.gif " alt="">
-                        </div>
-                    </div>
+
+<section class="seccion_clara robot textoCentro" id="Mercados">
+    <h1 class="mt-3 textoCentro">MERCADOS</h1>
+    <div class="articulosx4 mt-5">
+        <article data-aos="zoom-in-right">
+
+                <a href="#" class="tarjetax4">
+                    <p><img src="img/home/mercado_1.png" alt=""><br>
+                    <strong>MATERIAS<br>PRIMAS</strong></p>
+                    <a class="btnHover" href="#"><p class="back p-3">Invierte en materias primas como oro, plata, petróleo, gas natural, azúcar y más, con oportunidades diversificadas y rentables en nuestro fondo.</p></a>
+                </a>
+
+        </article>
+        <article data-aos="zoom-in-left">
+
+                <a href="#" class="tarjetax4">
+                    <p><img src="img/home/mercado_2.png" alt=""><br>
+                    <strong>ÍNDICES<br>BURSÁTILES</strong></p>
+                    <a class="btnHover" href="#"><p class="back p-3">Invierte en oportunidades que siguen los principales índices bursátiles globales, diversificando tu cartera y maximizando tu rentabilidad</p></a>
+                </a>
+
+        </article>
+        <article data-aos="zoom-in-right">
+
+                <a href="#" class="tarjetax4">
+                    <p><img src="img/home/mercado_3.png" alt=""><br>
+                    <strong>CRIPTO<br>MONEDAS</strong></p>
+                    <a class="btnHover" href="#"><p class="back p-3">Invierte en criptomonedas como Bitcoin las 24 horas del día, aprovechando la flexibilidad y el potencial de crecimiento que ofrecemos</p></a>
+                </a>
+
+        </article>
+        <article data-aos="zoom-in-left">
+
+                <a href="#" class="tarjetax4">
+                    <p><img src="img/home/mercado_4.png" alt=""><br>
+                    <strong>ETF</strong></p>
+                    <a class="btnHover" href="#"><p class="back p-3">Accede a ETFs líderes globales, una forma inteligente de diversificar y potenciar tus inversiones con nuestro fondo.</p></a>
+                </a>
+
+        </article>
+    </div>
+</section>
+
+<section class="seccion_clara robot">
+    <div class="row">
+        <div class="col-md-6">
+            <p class="display-2" class="mt-3 textoIzquierdo" style="font-weight: 900;">¿Por qué invertir con nosotros?</p><br>
+            <div class="containercargaSecuencial">
+                <div class="box" id="box1">
+                    <div class="title"><svg width="29" height="29" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.05 19.03">
+                        <path d="M18.21,4.68 A3.68,3.68 0 1,0 10.85,4.68 A3.68,3.68 0 1,0 18.21,4.68 M26.94,6.98 A2.74,2.74 0 1,0 21.46,6.98 A2.74,2.74 0 1,0 26.94,6.98 M7.6,6.98 A2.74,2.74 0 1,0 2.12,6.98 A2.74,2.74 0 1,0 7.6,6.98 M6.83,18.03H23.14v-3.2s-2.47-3.19-8.65-3.19c-5.74,0-8.65,3.19-8.65,3.19v3.2Z M2.66,13.23v4.8s-1.65,0-1.65,0v-2.4s-.14-1.67,1.65-2.4Z M26.39,13.23v4.8s1.65,0,1.65,0v-2.4s.14-1.67-1.65-2.4Z" fill="none" stroke-miterlimit="10" stroke-width="2px" stroke="#1E1E1E"/></svg> Acompañamiento</div>
+                    <div class="description" style="padding-left: 32px">Tu éxito es nuestro éxito. Te brindamos servicio excepcional, apoyo constante y priorizamos tu satisfacción en cada paso.</div>
+                    <div class="progress-bar"><div class="progress"></div></div>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <div class="slideHome">
-                    <div class="izquierda my-1">
-                        <div class="videoSlide centrarElementos">
-                            <img src="img/home/ETF'S.gif" alt="">
-                        </div>
-                    </div>
-                    <div class="derecha">
-                        <div class="texto_1 centrarElementos">
-                            <div class="texto_1_1 my-1">
-                                <h2 style="text-align: right;"> 
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="33.5" height="37.5" viewBox="0 0 33.5 37.5">
-                                        <g id="Grupo_1228" data-name="Grupo 1228" transform="translate(-1672.5 -3712.5)">
-                                            <rect id="Rectángulo_32" data-name="Rectángulo 32" width="23" height="29" rx="1.734" transform="translate(1673.5 3713.5)" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                            <rect id="Rectángulo_33" data-name="Rectángulo 33" width="23" height="29" rx="1.734" transform="translate(1682 3720)" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                            <line id="Línea_9" data-name="Línea 9" x2="12.239" transform="translate(1687.5 3729.5)" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                            <line id="Línea_10" data-name="Línea 10" x2="12.239" transform="translate(1687.5 3734.5)" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                            <line id="Línea_11" data-name="Línea 11" x2="12.239" transform="translate(1687.5 3739.5)" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                        </g>
-                                    </svg>&nbsp;&nbsp;
-                                    ETF’S
-                                </h2>
-                                <br>
-                                <p>Considerar la incorporación de ETFs (Exchange Traded Funds) en su estrategia es una decisión inteligente para diversificar su cartera más allá de las inversiones tradicionales. Los ETFs ofrecen una forma eficiente y accesible de invertir en una amplia gama de activos financieros, desde acciones y bonos hasta sectores específicos de la economía. En ELITE FOUND, le brindamos la oportunidad de explorar y capitalizar en una variedad de ETFs líderes a nivel mundial, proporcionándole la flexibilidad y la confianza necesarias para participar en estos mercados de manera efectiva.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="box" id="box2">
+                    <div class="title"><svg width="29" height="29" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="seccionWhy" d="M28.75 7.5L16.875 19.375L10.625 13.125L1.25 22.5M28.75 7.5H21.25M28.75 7.5V15" stroke="#1E1E1E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg> Rentabilidad</div>
+                    <div class="description" style="padding-left: 32px">Buscamos tu crecimiento financiero sostenible. Ofrecemos rentabilidad semanal atractiva en paquetes desde $50 hasta $10,000, con resultados constantes.</div>
+                    <div class="progress-bar"><div class="progress"></div></div>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <div class="slideHome">
-                    <div class="izquierda">
-                        <div class="texto_1 centrarElementos">
-                            <div class="texto_1_1 my-1">
-                                <h2 style="text-align: left;">
-                                    ÍNDICES BURSÁTILES&nbsp;&nbsp;
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="44.109" height="49.45" viewBox="0 0 44.109 49.45">
-                                        <g id="Grupo_1225" data-name="Grupo 1225" transform="translate(-569.5 -4824.55)">
-                                            <line id="Línea_6" data-name="Línea 6" y2="37.341" transform="translate(607.241 4830.241)" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                            <line id="Línea_7" data-name="Línea 7" y2="49.45" transform="translate(591.307 4824.55)" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                            <line id="Línea_8" data-name="Línea 8" y2="38.18" transform="translate(575.621 4830.241)" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                            <rect id="Rectángulo_28" data-name="Rectángulo 28" width="10.243" height="35.281" rx="3.34" transform="translate(586.433 4830.184)" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                            <rect id="Rectángulo_29" data-name="Rectángulo 29" width="10.243" height="23.9" rx="3.117" transform="translate(602.367 4839.288)" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                            <rect id="Rectángulo_30" data-name="Rectángulo 30" width="10.243" height="27.314" rx="3.266" transform="translate(570.5 4834.736)" fill="#fff" stroke="#00183b" stroke-miterlimit="10" stroke-width="2"/>
-                                        </g>
-                                    </svg>
-                                </h2>
-                                <br>
-                                <p>Explorar los índices bursátiles e incluirlos en su estrategia es una elección inteligente para ampliar su cartera. Estos índices son una herramienta efectiva para rastrear y capitalizar en el desempeño de los mercados financieros, reflejando a menudo segmentos específicos de la economía o regiones geográficas. En ELITE FOUND, estamos para brindarle la flexibilidad y la confianza necesarias para diversificar su cartera de manera estratégica.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="derecha my-1">
-                        <div class="videoSlide centrarElementos">
-                            <img src="img/home/Indices Bursatiles.gif" alt="">
-                        </div>
-                    </div>
+                <div class="box" id="box3">
+                    <div class="title"><svg width="29" height="29" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="seccionWhy" d="M27.5 15C27.5 21.9036 21.9036 27.5 15 27.5M27.5 15C27.5 8.09644 21.9036 2.5 15 2.5M27.5 15H2.5M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15M15 27.5C18.1266 24.0771 19.9034 19.635 20 15C19.9034 10.365 18.1266 5.92294 15 2.5M15 27.5C11.8734 24.0771 10.0966 19.635 10 15C10.0966 10.365 11.8734 5.92294 15 2.5M2.5 15C2.5 8.09644 8.09644 2.5 15 2.5" stroke="#1E1E1E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg> Acceso</div>
+                    <div class="description" style="padding-left: 32px">Ya seas experto o principiante, en ELITE FOUND todos son bienvenidos. Nuestros paquetes se adaptan a tu nivel y experiencia.</div>
+                    <div class="progress-bar"><div class="progress"></div></div>
+                </div>
+                <div class="box" id="box3">
+                    <div class="title"><svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="seccionWhy" d="M8.45833 13.2917V8.45841C8.45833 6.85607 9.09486 5.31934 10.2279 4.18631C11.3609 3.05328 12.8977 2.41675 14.5 2.41675C16.1024 2.41675 17.6391 3.05328 18.7721 4.18631C19.9051 5.31934 20.5417 6.85607 20.5417 8.45841V13.2917M6.04167 13.2917H22.9583C24.293 13.2917 25.375 14.3737 25.375 15.7084V24.1667C25.375 25.5014 24.293 26.5834 22.9583 26.5834H6.04167C4.70698 26.5834 3.625 25.5014 3.625 24.1667V15.7084C3.625 14.3737 4.70698 13.2917 6.04167 13.2917Z" stroke="#1E1E1E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg> Seguridad</div>
+                    <div class="description">Garantizamos los más altos estándares de seguridad para proteger tu información en todo momento.</div>
+                    <div class="progress-bar"><div class="progress"></div></div>
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+        <div class="col-md-6 text-center centrarElementos imagenContacto">
+            <a href="contacto.php"><img class="img-fluid w-75" src="img/home/mesa-de-ayuda 1.gif" alt=""></a>
+        </div>
     </div>
 </section>
-<section class="seccion_oscura">
-    <h1 class="my-3">¿POR QUÉ INVERTIR CON NOSOTROS?</h1>
-    <div class="galeriaX4">
-        <article class="row flex-md-row justify-content-md-center" data-aos="zoom-in-right">
-             <div class="col-3 centrarElementos ilustracion"><img src="img/home/acompañamiento.png" alt=""></div>
-             <div class="col-9"><h3>Acompañamiento<br><br></h3><p>Tu éxito es nuestro éxito. Ofrecemos un servicio al cliente excepcional y estamos disponibles para responder a tus preguntas y ayudarte en cada paso del camino. Tu satisfacción es lo más importante para nosotros.</p></div>
-        </article>
-        <article class="row flex-md-row justify-content-md-center" data-aos="zoom-in-left">
-             <div class="col-3 centrarElementos ilustracion"><img src="img/home/rentabilidad.png" alt=""></div>
-             <div class="col-9"><h3>Rentabilidad Consistente</h3><p>Nuestro objetivo es claro: queremos ayudarte a lograr un crecimiento financiero sostenible. Ofrecemos un atractivo porcentaje de rentabilidad semanal en todos nuestros paquetes de inversión. Ya sea que estés comenzando con $50 o estés listo para invertir $10000, nuestro enfoque en la rentabilidad constante puede ayudarte a alcanzar tus metas financieras.</p></div>
-        </article>
-        <article class="row flex-md-row justify-content-md-center" data-aos="zoom-in-right">
-             <div class="col-3 centrarElementos ilustracion"><img src="img/home/universal.png" alt=""></div>
-             <div class="col-9"><h3>Acceso<br>Universal</h3><p>No importa si eres un inversor experimentado o si apenas estás empezando tu viaje en el mundo de las inversiones. En ELITE FOUND, todos son bienvenidos. Nuestro de paquete se adapta a diferentes niveles de inversión y experiencia.</p></div>
-        </article>
-        <article class="row flex-md-row justify-content-md-center" data-aos="zoom-in-left">
-             <div class="col-3 centrarElementos ilustracion"><img src="img/home/seguridad.png" alt=""></div>
-             <div class="col-9"><h3>Seguridad<br><br></h3><p>Contamos con los más altos estándares de seguridad sobre tu información.</p></div>
-        </article>
+
+<section class="seccion_clara robot">
+
+    <div class="containerCards">
+        <ul id="cards">
+            <!-- planes inicio -->
+            <?php echo $planes ?>
+            <!-- planes final -->
+        </ul>
+    </div>
+    
+</section>
+
+<div style="width: 100vw; background: linear-gradient(0deg,rgba(33, 37, 41, 1) 50%, rgba(255, 255, 255, 1) 50%); background-attachment: fixed;">
+    <?xml version="1.0" encoding="UTF-8"?>
+    <svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 165.83" style="width: 100%; margin: auto">
+    <defs>
+        <style>
+        .cls-1 {
+            fill: #2ad47b;
+        }
+        </style>
+    </defs>
+    <g id="Capa_2-2" data-name="Capa 2">
+        <g>
+        <path class="cls-1" d="M149.61,127.35c-1.98,0-3.05,1.47-3.22,4.41l-.02,1.07c0,1.76,.28,3.05,.83,3.87s1.37,1.23,2.44,1.23c2.11,0,3.19-1.62,3.23-4.87v-.6c0-3.41-1.09-5.12-3.27-5.12Z"/>
+        <path class="cls-1" d="M88.16,127.35c-1.73,0-2.77,1.15-3.09,3.45h5.98v-.46c.02-.95-.22-1.68-.72-2.21s-1.22-.78-2.16-.78Z"/>
+        <path class="cls-1" d="M152.77,43.94c.02-.95-.22-1.68-.72-2.21s-1.22-.78-2.16-.78c-1.73,0-2.77,1.15-3.09,3.45h5.98v-.46Z"/>
+        <path class="cls-1" d="M184.73,43.94c.02-.95-.22-1.68-.72-2.21s-1.22-.78-2.16-.78c-1.73,0-2.77,1.15-3.09,3.45h5.98v-.46Z"/>
+        <path class="cls-1" d="M0,0V165.83H288V0H0ZM172.72,46.21c0-1.95,.36-3.66,1.08-5.15s1.77-2.64,3.16-3.45,3.02-1.22,4.92-1.22c2.67,0,4.78,.83,6.33,2.49s2.32,3.97,2.32,6.93v2.3h-11.78c.21,1.07,.67,1.9,1.39,2.51s1.64,.91,2.78,.91c1.88,0,3.34-.66,4.39-1.97l2.71,3.2c-.74,1.02-1.78,1.83-3.14,2.43s-2.81,.91-4.37,.91c-2.92,0-5.28-.87-7.08-2.61s-2.71-4-2.71-6.79v-.49Zm-13.22-9.47h2.43v-4.73h5.92v4.73h3.13v4.11h-3.13v8.7c0,.71,.13,1.21,.39,1.49s.77,.42,1.53,.42c.59,0,1.08-.04,1.48-.11v4.24c-1.07,.34-2.18,.51-3.34,.51-2.04,0-3.54-.48-4.52-1.44s-1.46-2.42-1.46-4.38v-9.44h-2.43v-4.11Zm-18.74,9.47c0-1.95,.36-3.66,1.08-5.15s1.77-2.64,3.16-3.45,3.02-1.22,4.92-1.22c2.67,0,4.78,.83,6.33,2.49s2.32,3.97,2.32,6.93v2.3h-11.78c.21,1.07,.67,1.9,1.39,2.51s1.64,.91,2.78,.91c1.88,0,3.34-.66,4.39-1.97l2.71,3.2c-.74,1.02-1.78,1.83-3.14,2.43s-2.81,.91-4.37,.91c-2.92,0-5.28-.87-7.08-2.61s-2.71-4-2.71-6.79v-.49Zm-19.83-9.47h5.55l.19,2.23c1.31-1.72,3.12-2.58,5.43-2.58,1.98,0,3.46,.59,4.44,1.78s1.49,2.96,1.52,5.34v12.25h-5.94v-12.01c0-.96-.19-1.67-.58-2.12s-1.09-.68-2.11-.68c-1.16,0-2.02,.46-2.58,1.37v13.43h-5.92v-19.02Zm-.97,57.31c.62,.56,.93,1.27,.93,2.14s-.31,1.58-.93,2.14-1.4,.83-2.34,.83-1.73-.28-2.35-.84-.92-1.27-.92-2.13,.31-1.56,.92-2.13,1.4-.84,2.35-.84,1.72,.28,2.34,.83Zm-11.9-70.74h6.26l-4.89,5.52h-4.83s3.46-5.52,3.46-5.52Zm-10.76,6.86h6.21v17c.07,2.8,1.37,4.2,3.9,4.2,1.28,0,2.24-.35,2.9-1.05s.98-1.85,.98-3.43V30.16h6.17v16.75c0,1.9-.4,3.54-1.21,4.93s-1.97,2.45-3.48,3.17-3.3,1.09-5.36,1.09c-3.12,0-5.57-.81-7.37-2.43s-2.71-3.83-2.74-6.64V30.16Zm-60.38,111.99h-6.15v-25.59h6.15v25.59Zm21.04,0h-5.94v-12.01c0-.96-.19-1.67-.58-2.12s-1.09-.68-2.11-.68c-1.16,0-2.02,.46-2.58,1.37v13.43h-5.92v-19.02h5.55l.19,2.23c1.31-1.72,3.12-2.58,5.43-2.58,1.98,0,3.46,.59,4.44,1.78s1.49,2.96,1.52,5.34v12.25Zm13.9,0h-6.05l-6.21-19.02h6.26l2.95,11.97,3.01-11.97h6.24l-6.21,19.02Zm24.96-7.65h-11.78c.21,1.07,.67,1.9,1.39,2.51s1.64,.91,2.78,.91c1.88,0,3.34-.66,4.39-1.97l2.71,3.2c-.74,1.02-1.78,1.83-3.14,2.43s-2.81,.91-4.37,.91c-2.92,0-5.28-.87-7.08-2.61s-2.71-4-2.71-6.79v-.49c0-1.95,.36-3.66,1.08-5.15s1.77-2.64,3.16-3.45,3.02-1.22,4.92-1.22c2.67,0,4.78,.83,6.33,2.49s2.32,3.97,2.32,6.93v2.3Zm13.89-6.01l-1.95-.14c-1.86,0-3.06,.59-3.59,1.76v12.04h-5.92v-19.02h5.55l.19,2.44c1-1.86,2.38-2.79,4.17-2.79,.63,0,1.18,.07,1.65,.21l-.11,5.5Zm.16-29.54h-17.86v-3.87l8.23-8.65c2.03-2.31,3.04-4.14,3.04-5.5,0-1.1-.24-1.94-.72-2.51s-1.18-.86-2.09-.86-1.63,.38-2.2,1.15-.84,1.73-.84,2.87h-5.94c0-1.57,.39-3.02,1.18-4.35s1.88-2.37,3.27-3.12,2.95-1.12,4.68-1.12c2.77,0,4.9,.64,6.39,1.92s2.24,3.11,2.24,5.5c0,1.01-.19,1.99-.56,2.94s-.96,1.96-1.75,3.01-2.07,2.45-3.82,4.21l-3.3,3.81h10.07v4.57Zm7.91,30.82c.52,.33,1.34,.6,2.47,.81s2.12,.46,2.98,.76c2.86,.98,4.29,2.75,4.29,5.29,0,1.73-.77,3.15-2.31,4.24s-3.54,1.63-5.99,1.63c-1.63,0-3.08-.29-4.36-.88s-2.27-1.38-2.99-2.39-1.07-2.07-1.07-3.18h5.54c.02,.88,.32,1.52,.88,1.92s1.28,.61,2.16,.61c.81,0,1.42-.16,1.82-.49s.61-.76,.61-1.28-.26-.91-.79-1.21-1.53-.62-3.01-.95-2.7-.76-3.66-1.29-1.69-1.18-2.2-1.94-.76-1.63-.76-2.62c0-1.75,.72-3.18,2.16-4.32s3.33-1.7,5.66-1.7c2.51,0,4.52,.57,6.05,1.71s2.29,2.63,2.29,4.48h-5.94c0-1.52-.8-2.29-2.41-2.29-.62,0-1.14,.17-1.56,.52s-.63,.78-.63,1.29,.26,.96,.77,1.28Zm18.76,12.38h-5.94v-19.02h5.94v19.02Zm-.63-21.85c-.61,.54-1.4,.81-2.37,.81s-1.76-.27-2.37-.81-.91-1.23-.91-2.07,.3-1.54,.91-2.07,1.4-.81,2.37-.81,1.76,.27,2.37,.81,.91,1.23,.91,2.07-.3,1.54-.91,2.07Zm1.39-22.07c-1.32,.71-2.89,1.07-4.69,1.07-1.61,0-3.11-.33-4.52-.99-1.41-.66-2.51-1.57-3.3-2.72-.8-1.15-1.19-2.46-1.18-3.91h5.94c.06,.94,.36,1.68,.9,2.23,.54,.55,1.25,.82,2.13,.82,1.99,0,2.99-1.47,2.99-4.42,0-2.72-1.22-4.09-3.66-4.09-1.38,0-2.41,.44-3.09,1.33l-4.71-1.11,1.56-13.09h14.96v4.61h-10.14l-.58,5.08c.42-.25,.98-.46,1.66-.65s1.36-.28,2.01-.28c2.54,0,4.5,.75,5.86,2.26s2.05,3.62,2.05,6.34c0,1.64-.37,3.13-1.1,4.46s-1.76,2.35-3.08,3.07Zm20.5,34.6c0,2.96-.82,5.32-2.47,7.06s-3.88,2.61-6.69,2.61-4.88-.81-6.52-2.43-2.53-3.82-2.65-6.6l-.02-1c0-1.9,.37-3.59,1.11-5.07s1.8-2.62,3.18-3.42,3.01-1.2,4.87-1.2c2.85,0,5.09,.88,6.73,2.65s2.46,4.16,2.46,7.2v.21Zm-4.13-43.41l-2.53,2.78v6.75h-6.17v-25.59h6.17v11.29l2.14-3.25,5.52-8.03h7.63l-8.65,11.32,8.65,14.27h-7.31l-5.45-9.53Zm23.77,52.73h-5.94v-12.01c0-.96-.19-1.67-.58-2.12s-1.09-.68-2.11-.68c-1.16,0-2.02,.46-2.58,1.37v13.43h-5.92v-19.02h5.55l.19,2.23c1.31-1.72,3.12-2.58,5.43-2.58,1.98,0,3.46,.59,4.44,1.78s1.49,2.96,1.52,5.34v12.25Zm9.53,0h-5.94v-19.02h5.94v19.02Zm-.63-21.85c-.61,.54-1.4,.81-2.37,.81s-1.76-.27-2.37-.81-.91-1.23-.91-2.07,.3-1.54,.91-2.07,1.4-.81,2.37-.81,1.76,.27,2.37,.81,.91,1.23,.91,2.07-.3,1.54-.91,2.07Zm1.04-23.92h-5.54v-6.87h-6.01v-5.08h6.01v-6.68h5.54v6.68h5.99v5.08h-5.99v6.87Zm9.18,33.39c.52,.33,1.34,.6,2.47,.81s2.12,.46,2.98,.76c2.86,.98,4.29,2.75,4.29,5.29,0,1.73-.77,3.15-2.31,4.24s-3.54,1.63-5.99,1.63c-1.63,0-3.08-.29-4.36-.88s-2.27-1.38-2.99-2.39-1.07-2.07-1.07-3.18h5.54c.02,.88,.32,1.52,.88,1.92s1.28,.61,2.16,.61c.81,0,1.42-.16,1.82-.49s.61-.76,.61-1.28-.26-.91-.79-1.21-1.53-.62-3.01-.95-2.7-.76-3.66-1.29-1.69-1.18-2.2-1.94-.76-1.63-.76-2.62c0-1.75,.72-3.18,2.16-4.32s3.33-1.7,5.66-1.7c2.51,0,4.52,.57,6.05,1.71s2.29,2.63,2.29,4.48h-5.94c0-1.52-.8-2.29-2.41-2.29-.62,0-1.14,.17-1.56,.52s-.63,.78-.63,1.29,.26,.96,.77,1.28Zm22.8,12.22c-1.07,.34-2.18,.51-3.34,.51-2.04,0-3.54-.48-4.52-1.44s-1.46-2.42-1.46-4.38v-9.44h-2.43v-4.11h2.43v-4.73h5.92v4.73h3.13v4.11h-3.13v8.7c0,.71,.13,1.21,.39,1.49s.77,.42,1.53,.42c.59,0,1.08-.04,1.48-.11v4.24Zm18.7,.16h-5.92c-.21-.39-.4-.96-.56-1.71-1.09,1.37-2.61,2.06-4.57,2.06-1.79,0-3.32-.54-4.57-1.63s-1.88-2.45-1.88-4.09c0-2.06,.76-3.62,2.29-4.68s3.74-1.58,6.64-1.58h1.83v-1.01c0-1.75-.76-2.63-2.27-2.63-1.41,0-2.11,.69-2.11,2.08h-5.92c0-1.84,.78-3.33,2.35-4.48s3.56-1.72,5.99-1.72,4.34,.59,5.75,1.78,2.13,2.81,2.16,4.87v8.42c.02,1.75,.29,3.08,.81,4.01v.3Zm8.4-12.38c.52,.33,1.34,.6,2.47,.81s2.12,.46,2.98,.76c2.86,.98,4.29,2.75,4.29,5.29,0,1.73-.77,3.15-2.31,4.24s-3.54,1.63-5.99,1.63c-1.63,0-3.08-.29-4.36-.88s-2.27-1.38-2.99-2.39-1.07-2.07-1.07-3.18h5.54c.02,.88,.32,1.52,.88,1.92s1.28,.61,2.16,.61c.81,0,1.42-.16,1.82-.49s.61-.76,.61-1.28-.26-.91-.79-1.21-1.53-.62-3.01-.95-2.7-.76-3.66-1.29-1.69-1.18-2.2-1.94-.76-1.63-.76-2.62c0-1.75,.72-3.18,2.16-4.32s3.33-1.7,5.66-1.7c2.51,0,4.52,.57,6.05,1.71s2.29,2.63,2.29,4.48h-5.94c0-1.52-.8-2.29-2.41-2.29-.62,0-1.14,.17-1.56,.52s-.63,.78-.63,1.29,.26,.96,.77,1.28Z"/>
+        <path class="cls-1" d="M227.48,136.48c0,.54,.18,.98,.54,1.31s.83,.5,1.39,.5c.74,0,1.35-.16,1.84-.47s.83-.67,1.05-1.07v-3.04h-1.72c-2.06,0-3.09,.93-3.09,2.78Z"/>
+        </g>
+    </g>
+    </svg>
+</div>
+
+<section class="imagenFondo imagenslogan seccion_6">
+    <div class="leyenda" data-aos="flip-up" style="background-color: rgba(217, 217, 217, 0.75)">
+        <span class="robot" style="font-size: 30px;">Con orgullo, mantenemos nuestro compromiso de responsabilidad y coherencia hacia nuestros clientes, nuestra familia y todos quienes confían en nosotros.</span>
     </div>
 </section>
-<section class="seccion_clara">
-    <h1 class="mt-3">PLANES</h1>
-    <div class="articulos">
-        <?php echo empty($planes) || $planes == 0 ? "" : $planes ?>
+
+<div class="seccion_clara p-2">
+    <div class="row justify-content-center">
+        <div class="col-4 col-md centrarElementos"><img class="w-100" src="img/home/certificado_1.png" alt=""></div>
+        <div class="col-4 col-md centrarElementos"><img class="w-100" src="img/home/certificado_2.png" alt=""></div>
+        <div class="col-4 col-md centrarElementos"><img class="w-100" src="img/home/certificado_3.png" alt=""></div>
+        <div class="col-4 col-md centrarElementos"><img class="w-100" src="img/home/certificado_4.png" alt=""></div>
+        <div class="col-4 col-md centrarElementos"><img class="w-100" src="img/home/certificado_5.png" alt=""></div>
     </div>
-</section>
-<section class="imagenFondo seccion_6" style="height: 56.4vw;">
-    <div class="leyenda seccion_oscura" data-aos="flip-up">
-        <p>Con gran orgullo, mantenemos firmemente nuestro compromiso con la responsabilidad y la coherencia hacia nuestros clientes, nuestra familia y todos aquellos que han depositado su confianza en nosotros.</p>
-    </div>
-</section>
+</div>
+
 <?php echo $footer ?>        
 
 <script src="js/tools/cdn.jsdelivr.net_npm_bootstrap@5.3.0_dist_js_bootstrap.bundle.min.js"></script>
@@ -499,6 +496,7 @@
 <script src="js/comenzar.js"></script>
 <script src="js/session.js"></script>
 <script src="js/criptomonedas.js"></script>
+<script src="js/cargaSecuencialInteractiva.js"></script>
 <script>
     $(document).ready(function() {
         AOS.init();
