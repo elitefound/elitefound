@@ -29,6 +29,7 @@
                                 <th>Nombre</th>
                                 <th>Usuario</th>
                                 <th>Email</th>
+                                <th>Acceso</th>
                                 <th>Actualizar</th>
                                 <th>Entrar como</th>
                                 <th></th>

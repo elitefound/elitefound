@@ -25,8 +25,13 @@ if(isset($_POST['EmailUser'], $_POST['passUser'])){
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $hash = $row['contrasena'];
-        
+
         if (password_verify($pass, $hash)) {
+            if (isset($row['bloqueado']) && (int)$row['bloqueado'] === 1) {
+                echo "El acceso de este usuario se encuentra bloqueado. Contacte al administrador.";
+                exit;
+            }
+
             session_start();
             $_SESSION["id_user"] = $row['id_user'];
             $_SESSION["loggedin"] = true;

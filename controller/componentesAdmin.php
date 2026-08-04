@@ -30,6 +30,11 @@ $menu = '
                     </ul>
                 </li>
             </ul>
+            <form method="post" action="../controller/btnLogout.php" class="d-flex mb-0">
+                <button type="submit" name="logout" class="btn btn-outline-light">
+                    Cerrar sesión
+                </button>
+            </form>
         </div>
     </div>
 </nav>  

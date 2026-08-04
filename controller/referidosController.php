@@ -25,6 +25,8 @@ if ($UserTipo === "1"){
 
 include("encoded.php");
 require_once('../../config-ext.php');
+require_once(__DIR__.'/verificarUsuarioActivo.php');
+verificarUsuarioActivo($conn);
 
 $userName = $_SESSION['userName'];
 $email = $_SESSION['email'];

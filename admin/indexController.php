@@ -9,6 +9,9 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 
         $confirma = $row['confirma'];
+        $bloqueado = isset($row['bloqueado']) ? (int)$row['bloqueado'] : 0;
+        $textoAcceso = $bloqueado === 1 ? 'Desbloquear' : 'Bloquear';
+        $claseAcceso = $bloqueado === 1 ? 'btn-success' : 'btn-warning';
         if($confirma == 0){
             $htmlConfirma = "<td>
                             <div class=\"btn-group\" role=\"group\">
@@ -30,6 +33,11 @@ if ($result->num_rows > 0) {
             <td>
                 ".$row['username']."</td><td>".decoded($row['email'])."
             </td>
+                <td>
+                    <button type=\"button\" class=\"btn ".$claseAcceso."\" onclick=\"CambiarBloqueo(".$row['id_user'].", ".$bloqueado.")\">
+                        ".$textoAcceso."
+                    </button>
+                </td>
                 <td>
                     <button id=\"btnActualizar\" type=\"button\" class=\"btn btn-primary\" onclick=\"Actualizar(".$row['id_user'].")\">
                         Actualizar

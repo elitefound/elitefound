@@ -45,6 +45,8 @@ $Apellido = $_SESSION['Apellido'];
 $Iduser = $_SESSION['id_user'];
 
 require_once('../../config-ext.php');
+require_once(__DIR__.'/verificarUsuarioActivo.php');
+verificarUsuarioActivo($conn);
 
 $stmt = $conn->prepare("SELECT d.id_depositos, d.fecha, d.fechafinal, d.cantidad, d.estado, p.plan, p.id_Retiros
 FROM depositos AS d

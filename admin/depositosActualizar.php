@@ -1,6 +1,67 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    session_start();
+
+    if (
+        !isset($_SESSION['loggedin'], $_SESSION['UserTipo']) ||
+        $_SESSION['loggedin'] !== true ||
+        $_SESSION['UserTipo'] != '1'
+    ) {
+        http_response_code(403);
+        echo 'ERROR_NO_AUTORIZADO';
+        exit;
+    }
+
     require_once("../../../config-ext.php");
+
+    if (isset($_POST['accion']) && $_POST['accion'] === 'finalizar') {
+        $idDeposito = filter_input(INPUT_POST, 'idDeposito', FILTER_VALIDATE_INT);
+
+        if ($idDeposito === false || $idDeposito === null || $idDeposito <= 0) {
+            http_response_code(400);
+            echo 'ERROR_ID_INVALIDO';
+            exit;
+        }
+
+        // Finalizar sólo permite la transición de un depósito activo (1) a finalizado (2).
+        // No recalcula fechas, ganancias ni bonos creados durante su activación.
+        $stmt = $conn->prepare(
+            'UPDATE depositos SET estado = 2 WHERE id_depositos = ? AND estado = 1'
+        );
+
+        if ($stmt === false) {
+            http_response_code(500);
+            echo 'ERROR_CONSULTA';
+            exit;
+        }
+
+        $stmt->bind_param('i', $idDeposito);
+
+        if (!$stmt->execute()) {
+            $stmt->close();
+            http_response_code(500);
+            echo 'ERROR_ACTUALIZACION';
+            exit;
+        }
+
+        $actualizado = $stmt->affected_rows === 1;
+        $stmt->close();
+
+        if (!$actualizado) {
+            http_response_code(409);
+            echo 'ERROR_ESTADO_INVALIDO';
+            exit;
+        }
+
+        echo 'OK';
+        exit;
+    }
+
+    if (!isset($_POST['datos'])) {
+        http_response_code(400);
+        echo 'ERROR_DATOS_REQUERIDOS';
+        exit;
+    }
 
     $datos = filter_var($_POST["datos"], FILTER_SANITIZE_STRING);
     $arraydatos = explode(",", $datos);

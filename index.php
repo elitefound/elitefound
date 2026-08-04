@@ -3,13 +3,7 @@
     //include(dirname(__FILE__).'/controller/selectPlanes.php');
     include(dirname(__FILE__).'/controller/selectPlanesNew.php');
     include(dirname(__FILE__).'/controller/footer.php');
-
-    $base = 1.05;
-    $dia_actual = date("z");
-    $exponente = pow($base, $dia_actual);
-    $valorAsociados = (int) ($exponente * 0.338);
-    $valorTransacciones = (int) ($exponente * 0.13);
-    $valorPagosTotal = (int) ($exponente + 770);
+    include(dirname(__FILE__).'/controller/estadisticasPublicas.php');
 ?>
 
 <!DOCTYPE html>
@@ -351,9 +345,9 @@
     </div>
 
 <section class="seccion_oscura seccion_2 robot">
-    <div class="customers marcador"><p><?php echo $valorAsociados; ?>k</p><p>Asociados</p></div>
-    <div class="transactions marcador"><p><?php echo $valorTransacciones; ?>M</p><p>Transacciones totales</p></div>
-    <div class="payments marcador"><p><?php echo $valorPagosTotal; ?></p><p>Pagos totales</p></div>
+    <div class="customers marcador"><p class="contador-valor" data-total="<?php echo $valorAsociados; ?>"><?php echo number_format($valorAsociados, 0, '.', ','); ?></p><p>Asociados</p></div>
+    <div class="transactions marcador"><p class="contador-valor" data-total="<?php echo $valorTransacciones; ?>"><?php echo number_format($valorTransacciones, 0, '.', ','); ?></p><p>Transacciones totales</p></div>
+    <div class="payments marcador"><p class="contador-valor" data-total="<?php echo $valorPagosTotal; ?>"><?php echo number_format($valorPagosTotal, 0, '.', ','); ?></p><p>Pagos totales</p></div>
     <div data-aos="zoom-in-right" class="info m-3"><p><br>En ELITE FOUND, nos enfocamos en decisiones financieras inteligentes y seguras. Te ofrecemos acceso a mercados sólidos y diversificados como el S&P 500, NASDAQ, Bolsa de Tokio, Bolsa de Londres, materias primas y criptomonedas con alto potencial. Nuestro objetivo es brindarte confianza y rentabilidad en cada inversión.</p></div>
     <div data-aos="zoom-in-left" class="ilustracion mb-3 p-2"><br><img class="p-3" src="img/home/ilustracion1.png" alt=""></div>
 </section>
@@ -500,6 +494,7 @@
 <script src="js/session.js"></script>
 <script src="js/criptomonedas.js"></script>
 <script src="js/cargaSecuencialInteractiva.js"></script>
+<script src="js/estadisticasScroll.js?v=20260803-4"></script>
 <script>
     $(document).ready(function() {
         AOS.init();

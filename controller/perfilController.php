@@ -31,6 +31,8 @@ $Iduser = $_SESSION['Iduser'];
 $resultadoOption = "";
 
 require_once('../../config-ext.php');
+require_once(__DIR__.'/verificarUsuarioActivo.php');
+verificarUsuarioActivo($conn);
 
 $sql = "SELECT id_billetera, nombre FROM billetera";
 $result = $conn->query($sql);

@@ -51,22 +51,22 @@ function finalizado(dato){
         cancelButtonText: 'No'
     }).then((result) => {
         if (result.isConfirmed) {
-            var datos = $("#dato_"+dato).val();
-            var datosArray = datos.split(",");
-        
             $.ajax({
                 url: 'depositosActualizar.php',
                 type: 'POST',
                 data:{
-                    idDeposito: datosArray[0],
-                    valor: 2
+                    accion: 'finalizar',
+                    idDeposito: dato
                 },
                 success: function(data){
-                    if(data === "OK"){
+                    if($.trim(data) === "OK"){
                         location.reload();
                     }else{
                         alert ("Error al actualizar registro");
                     }
+                },
+                error: function(){
+                    alert ("No fue posible finalizar el depósito");
                 }
             });
         }

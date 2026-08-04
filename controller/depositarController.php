@@ -47,6 +47,8 @@ $Apellido = $_SESSION['Apellido'];
 $Iduser = $_SESSION["id_user"];
 
 require_once('../../config-ext.php');
+require_once(__DIR__.'/verificarUsuarioActivo.php');
+verificarUsuarioActivo($conn);
 $planes = "";
 
 $sql = "SELECT * FROM planes WHERE visibilidad = 1";

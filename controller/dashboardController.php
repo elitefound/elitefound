@@ -21,6 +21,8 @@ if(!isset($_SESSION["id_user"]) || empty($_SESSION["id_user"])){
 $id_user = $_SESSION["id_user"];
 require_once('../../config-ext.php');
 include("encoded.php");
+require_once(__DIR__.'/verificarUsuarioActivo.php');
+verificarUsuarioActivo($conn);
 
 $stmt = $conn->prepare("SELECT * FROM user WHERE id_user = ?");
 $stmt->bind_param("i", $id_user);

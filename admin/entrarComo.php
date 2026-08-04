@@ -11,6 +11,13 @@ if(isset($_POST['EmailUser'], $_POST['passUser'])){
     
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
+
+        if (isset($row['bloqueado']) && (int)$row['bloqueado'] === 1) {
+            http_response_code(403);
+            echo "No se puede ingresar como un usuario bloqueado.";
+            exit;
+        }
+
         session_start();
         $_SESSION['id_user'] = $row['id_user'];
         $_SESSION['loggedin'] = true;

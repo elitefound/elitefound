@@ -394,7 +394,8 @@ CREATE TABLE `user` (
   `username` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
   `cedula` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `UserTipo` int NOT NULL DEFAULT '2',
-  `confirma` bigint NOT NULL DEFAULT '0'
+  `confirma` bigint NOT NULL DEFAULT '0',
+  `bloqueado` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

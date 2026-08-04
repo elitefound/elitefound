@@ -26,6 +26,48 @@ function Actualizar(idUser){
     });
 }
 
+function CambiarBloqueo(idUser, bloqueadoActual){
+    var bloquear = Number(bloqueadoActual) === 0;
+    var accion = bloquear ? "bloquear" : "desbloquear";
+
+    Swal.fire({
+        title: "¿Estás seguro?",
+        text: bloquear
+            ? "El usuario no podrá iniciar sesión."
+            : "El usuario podrá iniciar sesión nuevamente.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: bloquear ? "#d33" : "#198754",
+        cancelButtonColor: "#6c757d",
+        confirmButtonText: "Sí, " + accion,
+        cancelButtonText: "Cancelar"
+    }).then((result) => {
+        if (!result.isConfirmed) {
+            return;
+        }
+
+        $.ajax({
+            url: 'bloquearUsuario.php',
+            type: 'POST',
+            data: {
+                idUser: idUser,
+                bloqueado: bloquear ? 1 : 0
+            },
+            success: function(data){
+                if ($.trim(data) === "OK") {
+                    location.reload();
+                    return;
+                }
+
+                Swal.fire("Error", "No fue posible cambiar el acceso del usuario.", "error");
+            },
+            error: function(){
+                Swal.fire("Error", "No fue posible cambiar el acceso del usuario.", "error");
+            }
+        });
+    });
+}
+
 function Eliminar(idUser){
     Swal.fire({
         title: "¿Estas seguro?",
